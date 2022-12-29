@@ -38,6 +38,7 @@ const config: GatsbyConfig = {
       __key: 'pages',
     },
   ],
+  trailingSlash: 'never',
 };
 
 export default config;
