@@ -13,7 +13,9 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint --max-warnings 0 --ignore-path .gitignore . && prettier --ignore-path .gitignore --check .",
+    "lint:fix": "eslint --max-warnings 0 --ignore-path .gitignore --fix . && prettier --ignore-path .gitignore --write ."
   },
   "dependencies": {
     "@mdx-js/react": "^2.2.1",
