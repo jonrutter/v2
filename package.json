@@ -15,7 +15,11 @@
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
     "lint": "eslint --max-warnings 0 --ignore-path .gitignore . && prettier --ignore-path .gitignore --check .",
-    "lint:fix": "eslint --max-warnings 0 --ignore-path .gitignore --fix . && prettier --ignore-path .gitignore --write ."
+    "lint:fix": "eslint --max-warnings 0 --ignore-path .gitignore --fix . && prettier --ignore-path .gitignore --write .",
+    "test": "jest",
+    "test:dev": "npm test -- --coverage --watch",
+    "test:all": "npm test -- --coverage --watchAll",
+    "test:ci": "CI=true npm run test -- --coverage"
   },
   "dependencies": {
     "@fontsource/open-sans": "^4.5.13",
