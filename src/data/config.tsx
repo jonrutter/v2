@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { GitHubIcon } from './components/icons/GitHub';
-import { LinkedinIcon } from './components/icons/Linkedin';
-import { CodePenIcon } from './components/icons/CodePen';
-import { MastodonIcon } from './components/icons/Mastodon';
+import { GitHubIcon } from '../components/icons/GitHub';
+import { LinkedinIcon } from '../components/icons/Linkedin';
+import { CodePenIcon } from '../components/icons/CodePen';
+import { MastodonIcon } from '../components/icons/Mastodon';
 
 type SocialLink = {
   label: string;
