@@ -2,7 +2,7 @@ import React from 'react';
 import type { GatsbyBrowser } from 'gatsby';
 
 // styles
-import './src/styles/main.css';
+import './src/assets/styles/main.css';
 
 // fonts
 import '@fontsource/seaweed-script';
