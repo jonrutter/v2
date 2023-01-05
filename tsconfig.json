@@ -107,7 +107,8 @@
     "./gatsby-node.ts",
     "./gatsby-config.ts",
     "./plugins/**/*",
-    "./src/custom.d.ts"
+    "./src/custom.d.ts",
+    "./test/**/*"
   ],
   "exclude": ["node_modules", "./.cache", "./public"]
 }
