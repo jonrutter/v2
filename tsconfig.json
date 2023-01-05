@@ -11,7 +11,6 @@
       "@test/*": ["test/*"]
     },
     "resolveJsonModule": true,
-    "allowJs": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
