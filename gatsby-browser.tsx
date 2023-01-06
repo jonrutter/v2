@@ -13,6 +13,7 @@ import '@fontsource/playfair-display/700.css';
 
 // context providers
 import { ColorModeProvider } from './src/context/ColorMode';
+import { LazyMotion, domAnimation } from 'framer-motion';
 
 // TODO: wrap pages with custom loading component
 export const wrapPageElement: GatsbyBrowser['wrapPageElement'] = ({
@@ -24,4 +25,8 @@ export const wrapPageElement: GatsbyBrowser['wrapPageElement'] = ({
 
 export const wrapRootElement: GatsbyBrowser['wrapRootElement'] = ({
   element,
-}) => <ColorModeProvider>{element}</ColorModeProvider>;
+}) => (
+  <LazyMotion features={domAnimation}>
+    <ColorModeProvider>{element}</ColorModeProvider>
+  </LazyMotion>
+);
