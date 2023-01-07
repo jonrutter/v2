@@ -3,7 +3,7 @@ import { Button } from '@/components/Button';
 
 /** Renders the home page's landing section */
 export const Landing = () => (
-  <div className="w-full h-full min-h-[calc(100vh-5rem)] pt-20 md:pt-36">
+  <div className="w-full h-full min-h-[calc(100vh-5rem)] py-20 md:py-36">
     <div className="w-full max-w-[500px] mx-auto">
       <h1 className="flex flex-col mb-6 md:mb-8">
         <span className="text-xl font-cursive text-pink-600 dark:text-pink-400 mb-4 md:mb-6">
