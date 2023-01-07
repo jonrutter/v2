@@ -1,6 +1,7 @@
 import React from 'react';
 import { skills } from '@/data/skills';
-import { ProfilePicture } from './ProfilePicture';
+import { ImageBorders } from '@/components/ImageBorders';
+import { StaticImage } from 'gatsby-plugin-image';
 
 /** Renders the home page's about section */
 export const About = () => (
@@ -115,7 +116,17 @@ export const About = () => (
       </section>
       {/* right / bottom box - image */}
       <div className="flex items-center justify-center lg:justify-end">
-        <ProfilePicture />
+        <ImageBorders>
+          <StaticImage
+            src={'../../assets/images/profile.png'}
+            alt="profile picture of Jon Rutter"
+            width={400}
+            placeholder="blurred"
+            quality={100}
+            className="hover:filter hover:saturate-[1.2] transition-all"
+            data-testid="profile-picture"
+          />
+        </ImageBorders>
       </div>
     </div>
   </div>
