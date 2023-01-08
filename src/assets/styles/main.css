@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  .contact-section-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem 5rem;
+  }
+  @media screen and (min-width: 1024px) {
+    .contact-section-grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        '. header'
+        'image form';
+      justify-items: space-between;
+    }
+  }
+}
