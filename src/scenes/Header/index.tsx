@@ -61,6 +61,15 @@ export const Header = () => (
               </li>
               <li>
                 <Link
+                  to="/blog"
+                  className="opacity-80 hover:opacity-100 transition-opacity"
+                >
+                  Blog
+                </Link>
+              </li>
+
+              <li>
+                <Link
                   to="/#contact"
                   className="opacity-80 hover:opacity-100 transition-opacity"
                 >
