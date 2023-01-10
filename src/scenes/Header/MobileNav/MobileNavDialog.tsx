@@ -115,14 +115,10 @@ const useVariants = (): VariantsGroup => {
   const reduceMotion = useReducedMotion();
 
   const containerVariants = {
-    closed: reduceMotion
-      ? {
-          opacity: 0,
-        }
-      : {
-          x: '100%',
-          opacity: 1,
-        },
+    closed: {
+      ...(reduceMotion ? {} : { x: '100%' }),
+      opacity: reduceMotion ? 0 : 1,
+    },
     open: {
       x: 0,
       opacity: 1,
@@ -133,21 +129,13 @@ const useVariants = (): VariantsGroup => {
         delayChildren: 0.4,
       },
     },
-    exit: reduceMotion
-      ? {
-          opacity: 0,
-          transition: {
-            delay: 0,
-            duration: 0.3,
-          },
-        }
-      : {
-          x: '100%',
-          transition: {
-            delay: 0,
-            duration: 0.3,
-          },
-        },
+    exit: {
+      ...(reduceMotion ? { opacity: 0 } : { x: '100%' }),
+      transition: {
+        delay: 0,
+        duration: 0.3,
+      },
+    },
   };
 
   const slideInVariants = {
