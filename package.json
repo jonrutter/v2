@@ -12,6 +12,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "preview": "npm run clean && npm run build && npm run serve",
     "typecheck": "tsc --noEmit",
     "lint": "eslint --max-warnings 0 --ignore-path .gitignore . && prettier --ignore-path .gitignore --check .",
     "lint:fix": "eslint --max-warnings 0 --ignore-path .gitignore --fix . && prettier --ignore-path .gitignore --write .",
