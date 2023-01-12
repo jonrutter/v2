@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+  html,
+  body {
+    @apply dark:bg-[#01001a];
+  }
+
   .contact-section-grid {
     display: grid;
     grid-template-columns: 1fr;
