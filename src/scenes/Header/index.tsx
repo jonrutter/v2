@@ -4,15 +4,15 @@ import { Logo } from '@/components/Logo';
 import { socialLinks } from '@/data/socialLinks';
 import { ColorModeSwitch } from '@/components/ColorModeSwitch';
 import { MobileNav } from './MobileNav';
-import { m, useReducedMotion } from 'framer-motion';
-import type { Variants } from 'framer-motion';
+import { m } from 'framer-motion';
+import { useAnimations } from './useAnimations';
 
 // TODO: add blog dropdown once blog functionality is added
 // TODO: consider using custom calculated delays instead of staggerChildren, because staggerChildren will wait for hidden elements (thus creating a huge delay on small screens)
 
 /** Renders the site header */
 export const Header = () => {
-  const { containerVariants, slideDownVariants, popUpVariants } = useVariants();
+  const { container, slideDown, popUp } = useAnimations();
 
   return (
     <>
@@ -22,7 +22,7 @@ export const Header = () => {
             <Logo />
           </div>
           <m.div
-            variants={containerVariants}
+            variants={container}
             initial="hidden"
             animate="show"
             className="flex justify-center items-center"
@@ -35,13 +35,13 @@ export const Header = () => {
                   key="social-links"
                 >
                   {socialLinks.map(({ label, icon, url }) => (
-                    <m.li key={label} variants={popUpVariants}>
+                    <m.li key={label} variants={popUp} className="inline-block">
                       <a
                         href={url}
                         aria-label={`link to my ${label}`}
                         target="_blank"
                         rel="noreferrer"
-                        className="opacity-80 hover:opacity-100 transition-opacity inline-block p-2"
+                        className="opacity-80 hover:opacity-100 transition-opacity block p-2"
                       >
                         {icon}
                       </a>
@@ -53,7 +53,7 @@ export const Header = () => {
                   className="flex justify-center items-center space-x-6 lg:space-x-8 text-base font-semibold ml-20"
                   key="site-links"
                 >
-                  <m.li variants={slideDownVariants}>
+                  <m.li variants={slideDown}>
                     <Link
                       to="/"
                       className="opacity-80 hover:opacity-100 transition-opacity"
@@ -61,7 +61,7 @@ export const Header = () => {
                       Home
                     </Link>
                   </m.li>
-                  <m.li variants={slideDownVariants}>
+                  <m.li variants={slideDown}>
                     <Link
                       to="/#about"
                       className="opacity-80 hover:opacity-100 transition-opacity"
@@ -69,7 +69,7 @@ export const Header = () => {
                       About
                     </Link>
                   </m.li>
-                  <m.li variants={slideDownVariants}>
+                  <m.li variants={slideDown}>
                     <Link
                       to="/portfolio"
                       className="opacity-80 hover:opacity-100 transition-opacity"
@@ -77,7 +77,7 @@ export const Header = () => {
                       Portfolio
                     </Link>
                   </m.li>
-                  <m.li variants={slideDownVariants}>
+                  <m.li variants={slideDown}>
                     <Link
                       to="/blog"
                       className="opacity-80 hover:opacity-100 transition-opacity"
@@ -85,7 +85,7 @@ export const Header = () => {
                       Blog
                     </Link>
                   </m.li>
-                  <m.li variants={slideDownVariants}>
+                  <m.li variants={slideDown}>
                     <Link
                       to="/#contact"
                       className="opacity-80 hover:opacity-100 transition-opacity"
@@ -96,12 +96,12 @@ export const Header = () => {
                 </ul>
               </nav>
             </>
-            <m.div className="flex items-center ml-20" variants={popUpVariants}>
+            <m.div className="flex items-center ml-20" variants={popUp}>
               <ColorModeSwitch />
             </m.div>
             <m.div
               className="flex items-center ml-4 lg:hidden"
-              variants={popUpVariants}
+              variants={popUp}
             >
               <MobileNav />
             </m.div>
@@ -112,56 +112,4 @@ export const Header = () => {
       <div className="pt-20" />
     </>
   );
-};
-
-type VariantsGroup = {
-  slideDownVariants: Variants;
-  containerVariants: Variants;
-  popUpVariants: Variants;
-};
-
-const useVariants = (): VariantsGroup => {
-  const reduceMotion = useReducedMotion();
-
-  const containerVariants: Variants = {
-    hidden: {},
-    show: {
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const slideDownVariants: Variants = {
-    hidden: {
-      opacity: 0,
-      ...(reduceMotion ? {} : { y: '-100%' }),
-    },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: 'keyframes',
-        ease: 'easeInOut',
-      },
-    },
-  };
-
-  const popUpVariants: Variants = {
-    hidden: {
-      opacity: 0,
-      ...(reduceMotion ? {} : { scale: 0 }),
-    },
-    show: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        type: 'keyframes',
-        ease: 'easeInOut',
-      },
-    },
-  };
-
-  return { slideDownVariants, containerVariants, popUpVariants };
 };
