@@ -19,7 +19,8 @@
     "test": "jest",
     "test:dev": "npm test -- --coverage --watch",
     "test:all": "npm test -- --coverage --watchAll",
-    "test:ci": "CI=true npm run test -- --coverage"
+    "test:ci": "CI=true npm run test -- --coverage",
+    "build-portfolio": "bash ./scripts/build-portfolio.sh"
   },
   "dependencies": {
     "@fontsource/open-sans": "^4.5.13",
