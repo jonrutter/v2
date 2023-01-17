@@ -1,5 +1,5 @@
 import React from 'react';
-import { prettyDOM, render, screen, waitFor } from '@test/utils';
+import { render, screen, waitFor } from '@test/utils';
 import userEvent from '@testing-library/user-event';
 import { Contact } from '.';
 import { ENDPOINT } from './ContactForm/api';
@@ -70,7 +70,6 @@ describe('Contact section', () => {
     await userEvent.click(submitButton);
     const patternError = await screen.findByRole('alert');
     expect(patternError).toHaveTextContent(/invalid email/i);
-    console.log(prettyDOM());
   });
   it('correctly submits when given valid form inputs', async () => {
     render(<Contact />);
