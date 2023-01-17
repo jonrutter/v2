@@ -8,7 +8,8 @@
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"],
-      "@test/*": ["test/*"]
+      "@test/*": ["test/*"],
+      "@content/*": ["content/*"]
     },
     "resolveJsonModule": true,
     "esModuleInterop": true,
@@ -23,7 +24,8 @@
     "./gatsby-config.ts",
     "./plugins/**/*",
     "./src/custom.d.ts",
-    "./test/**/*"
+    "./test/**/*",
+    "./content/**/*"
   ],
   "exclude": ["node_modules", "./.cache", "./public"]
 }
