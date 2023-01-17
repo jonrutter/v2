@@ -37,6 +37,8 @@ export const onRenderBody: GatsbySSR['onRenderBody'] = ({
   setPreBodyComponents,
   setHtmlAttributes,
 }) => {
-  setPreBodyComponents([<InjectInitialDarkMode />]);
+  setPreBodyComponents([
+    <InjectInitialDarkMode key="inject-initial-dark-mode" />,
+  ]);
   setHtmlAttributes({ lang: 'en' });
 };
