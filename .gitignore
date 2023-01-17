@@ -4,3 +4,5 @@ public
 src/gatsby-types.d.ts
 
 coverage/
+
+content/portfolio/build/
