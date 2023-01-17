@@ -5,8 +5,13 @@ import { Spinner } from '.';
 describe('Spinner', () => {
   it('renders correctly', () => {
     render(<Spinner label="loading" />);
-    screen.getByRole('img', { name: /loading/i });
-    // the motion safe version should also be in the dom
-    expect(screen.getAllByText(/loading/i)).toHaveLength(2);
+    // select the svgs
+    const loaders = screen.getAllByRole('img', { name: /loading/i });
+    // there should be two svgs
+    expect(loaders).toHaveLength(2);
+    // the first svg should not be visible when motion is reduced
+    expect(loaders[0]).toHaveClass('motion-reduce:hidden');
+    // the second svg should be visible when motion is reduced
+    expect(loaders[1]).toHaveClass('motion-reduce:block');
   });
 });
