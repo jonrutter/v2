@@ -17,7 +17,7 @@ export const Landing = () => {
         <h1 className="flex flex-col mb-6 md:mb-8">
           <m.span
             variants={slideUp}
-            className="text-xl font-cursive text-pink-600 dark:text-pink-400 mb-4"
+            className="text-xl md:text-2xl font-cursive text-pink-600 dark:text-pink-400 mb-2 md:mb-4"
           >
             Hi, my name's{' '}
           </m.span>
@@ -30,8 +30,9 @@ export const Landing = () => {
         </h1>
         <m.div variants={slideUp}>
           <p className="text-lg mb-6 md:mb-8 opacity-60">
-            I'm a front end engineer specializing in building accessible,
-            responsive, and user-focused websites with React.
+            I'm a front-end engineer specializing in building accessible,
+            responsive, and user-focused websites with modern web development
+            best practices.
           </p>
         </m.div>
         <div className="flex flex-col space-y-6 md:flex-row md:space-y-0 md:space-x-8">
