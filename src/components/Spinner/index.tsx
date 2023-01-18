@@ -1,6 +1,6 @@
 import React from 'react';
 
-// credit for spinner svg: https://codepen.io/ingomc/pen/ONrMqe?editors=1100
+// credit for spinner svg: https://codepen.io/ingomc/pen/ONrMqe
 
 /** Renders a loading spinner */
 export const Spinner: React.FC<{ label: string }> = ({ label }) => (
@@ -8,7 +8,7 @@ export const Spinner: React.FC<{ label: string }> = ({ label }) => (
     {/* spinner svg */}
     <svg
       viewBox="25 25 50 50"
-      className="origin-center animate-rotate-outer motion-reduce:hidden"
+      className="origin-center animate-rotate-outer motion-reduce:hidden w-16"
       data-testid="spinner"
       role="img"
     >
