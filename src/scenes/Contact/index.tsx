@@ -31,9 +31,9 @@ export const Contact = () => {
               />
             </m.div>
             <m.div variants={fadeIn}>
-              <p className="opacity-60 max-w-[400px]">
+              <p className="opacity-60 max-w-[400px] text-lg">
                 I'd love to hear from you! Use this form to get in touch with
-                me, and I'll try my best to get back to you!
+                me, and I'll try to get back to you as soon as I can.
               </p>
             </m.div>
           </div>
