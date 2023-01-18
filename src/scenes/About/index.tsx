@@ -36,31 +36,39 @@ export const About = () => {
             <div className="text-lg mb-8">
               <m.div variants={fadeIn}>
                 <p className="mb-4 opacity-60">
-                  Hi! I'm Jon, and I'm a front end engineer focusing on building
-                  performative, accessible, and user-focused websites with
-                  JavaScript and React.
+                  Hi! I'm Jon, and I'm a front-end software engineer focusing on
+                  building performative, accessible, and user-focused websites
+                  with modern technologies like TypeScript and React.
                 </p>
               </m.div>
               <m.div variants={fadeIn}>
                 <p className="mb-4 opacity-60">
-                  I feel strongly that the web should work for everyone. I
-                  prioritize accessiblility and mobile-responsiveness, so that
-                  my websites and applications will work for people, regardless
-                  of disability or device type. I'm always trying to learn more
-                  about how to make my websites and applications even better!
+                  I strongly believe that the web should work for everyone. I
+                  approach every project with a focus on modern best practices
+                  that emphasize accessibility and mobile responsiveness, so
+                  that everyone will be able to use my websites, regardless of
+                  disability or device type.
                 </p>
               </m.div>
               <m.div variants={fadeIn}>
                 <p className="mb-4">
+                  <span className="opacity-60">I'm also passionate about </span>
+                  <a
+                    href="https://en.wikipedia.org/wiki/Free_and_open-source_software"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="opacity-60 hover:opacity-100 transition-opacity underline"
+                  >
+                    free and open-source software
+                  </a>
                   <span className="opacity-60">
-                    I'm also passionate about contributing to open source
-                    projects. Some of my contributions include{' '}
+                    . I enjoy contributing to open-source projects like{' '}
                   </span>
                   <a
                     href="https://github.com/gatsbyjs/gatsby/pulls?q=is%3Apr+is%3Amerged+author%3Ajonrutter"
                     target="_blank"
                     rel="noreferrer"
-                    className="group inline-flex items-baseline"
+                    className="group inline-flex items-baseline underline"
                   >
                     <img
                       src="https://avatars.githubusercontent.com/u/12551863?s=50&v=4"
@@ -76,7 +84,7 @@ export const About = () => {
                     href="https://github.com/WordPress/openverse-frontend/pulls?q=is%3Apr+author%3Ajonrutter"
                     target="_blank"
                     rel="noreferrer"
-                    className="group inline-flex items-baseline"
+                    className="group inline-flex items-baseline underline"
                   >
                     <img
                       src="https://avatars.githubusercontent.com/u/276006?s=50&v=4"
@@ -92,7 +100,7 @@ export const About = () => {
                     href="https://github.com/freeCodeCamp/freeCodeCamp/pulls?q=is%3Apr+is%3Amerged+author%3Ajonrutter"
                     target="_blank"
                     rel="noreferrer"
-                    className="group inline-flex items-baseline"
+                    className="group inline-flex items-baseline underline"
                   >
                     <img
                       src="https://avatars.githubusercontent.com/u/9892522?s=50&v=4"
@@ -117,7 +125,7 @@ export const About = () => {
               </m.h3>
               <m.div variants={fadeIn}>
                 <p className="mb-4 opacity-60 text-lg">
-                  Some technologies I regularly work with:
+                  Some technologies that I frequently work with include:
                 </p>
               </m.div>
               <m.ul

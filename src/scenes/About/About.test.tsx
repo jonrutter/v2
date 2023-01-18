@@ -3,7 +3,7 @@ import { render, screen } from '@test/utils';
 import { About } from '.';
 
 const relevantWords = [
-  /front end/i,
+  /front-end/i,
   /accessib[ility|le]/i,
   /react/i,
   /javascript/i,
