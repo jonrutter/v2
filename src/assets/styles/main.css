@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    @apply scroll-smooth motion-reduce:scroll-auto;
+  }
   html,
   body {
     @apply dark:bg-[#01001a];
