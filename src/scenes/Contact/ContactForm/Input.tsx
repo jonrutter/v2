@@ -1,12 +1,11 @@
-import React, { ComponentPropsWithoutRef } from 'react';
-import type { FieldError, UseFormRegister } from 'react-hook-form';
-import type { FieldName, FormDataType } from './api';
+import React from 'react';
+import { useWatch, useFormContext } from 'react-hook-form';
+import type { ComponentPropsWithoutRef } from 'react';
+import type { FieldName } from './api';
 
 type BaseProps<T extends React.ElementType> = {
-  register: UseFormRegister<FormDataType>;
   name: FieldName;
   label: React.ReactNode;
-  error?: FieldError;
   type?: 'text' | 'email';
   as?: T;
 };
@@ -14,24 +13,34 @@ type BaseProps<T extends React.ElementType> = {
 type Props<T extends React.ElementType> = BaseProps<T> &
   Omit<ComponentPropsWithoutRef<'input'>, keyof BaseProps<T>>;
 
-/** Renders a polymorphic component that handles the UI for a single form element. */
+/** Renders a polymorphic component that manages the UI for a single form element. */
 export const Input = <T extends React.ElementType = 'input'>({
-  register,
   name,
   label,
-  error,
   type = 'text',
   as,
   ...rest
 }: Props<T>) => {
+  // consume react-hook-form's methods from context
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
+  // get error for this input
+  const error = errors[name];
+  // watch form input, to correctly position label
+  const value = useWatch({ name });
+  // create a custom id to sync label and input for a11y, based on the form input's name
   const id = `contact-${name}`;
 
-  const className = `text-base py-3 px-4 bg-transparent border-2 outline-none focus:ring-2 focus:ring-indigo-900 dark:focus:ring-white focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-indigo-900 w-full ${
+  // base classes for the input element
+  const className = `text-base py-3 px-4 bg-transparent border-2 outline-none focus:ring-2 focus:ring-indigo-900 dark:focus:ring-white focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-indigo-900 w-full peer ${
     error
       ? 'border-pink-600 dark:border-pink-400'
       : 'border-neon-600 dark:border-neon-400 '
   }`;
 
+  // create JSX for the relevant input element, based on `as` prop
   const inputElement =
     as === 'textarea' ? (
       <textarea
@@ -57,11 +66,19 @@ export const Input = <T extends React.ElementType = 'input'>({
     );
 
   return (
-    <div className="flex flex-col pb-4">
-      <label htmlFor={id} className="text-lg font-semibold mb-1">
+    <div className="flex flex-col pb-4 relative z-0 h-auto">
+      {inputElement}
+      <label
+        htmlFor={id}
+        className={`text-lg font-semibold absolute left-2 top-3 transition-transform motion-reduce:transition-none
+         bg-indigo-50 dark:bg-indigo-900 px-2 ${
+           !value
+             ? 'opacity-80 peer-focus:opacity-100 peer-focus:-translate-x-2 peer-focus:-translate-y-8 peer-focus:scale-90 peer-focus:z-0 -z-10'
+             : 'opacity-100 -translate-x-2 -translate-y-8 scale-90 z-0'
+         }`}
+      >
         {label}
       </label>
-      {inputElement}
       {error && (
         <span
           className="italic text-pink-600 dark:text-pink-400 block absolute bottom-0 left-4 z-10 bg-indigo-50 dark:bg-indigo-900 px-2 transition-colors"
