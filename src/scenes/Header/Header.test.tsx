@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, waitFor } from '@test/utils';
+import { renderWithProviders as render, screen, waitFor } from '@test/utils';
 import { Header } from '.';
 import { socialLinks } from '@/data/socialLinks';
 import userEvent from '@testing-library/user-event';

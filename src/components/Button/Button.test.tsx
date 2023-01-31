@@ -1,5 +1,5 @@
 import React from 'react';
-import { screen, render } from '@test/utils';
+import { screen, renderWithProviders as render } from '@test/utils';
 import userEvent from '@testing-library/user-event';
 
 import { Button } from '.';

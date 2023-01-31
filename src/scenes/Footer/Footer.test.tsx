@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@test/utils';
+import { renderWithProviders as render, screen } from '@test/utils';
 import { Footer } from '.';
 
 import { links } from '@/data/socialLinks';
