@@ -2,10 +2,10 @@ import { useReducedMotion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 
 export const useAnimations = (): {
+  container: Variants;
   popUp: Variants;
   skillContainer: Variants;
   slideRight: Variants;
-  container: Variants;
   fadeIn: Variants;
 } => {
   const reduceMotion = useReducedMotion();
@@ -27,7 +27,7 @@ export const useAnimations = (): {
       opacity: 1,
       scale: 1,
       transition: {
-        duration: 0.5,
+        duration: 0.2,
       },
     },
   };
@@ -59,10 +59,17 @@ export const useAnimations = (): {
   };
 
   const container: Variants = {
-    hidden: {},
+    hidden: {
+      opacity: 0,
+      ...(reduceMotion ? {} : { y: 64 }),
+    },
     visible: {
+      opacity: 1,
+      y: 0,
       transition: {
-        staggerChildren: 0.2,
+        duration: 0.5,
+        type: 'keyframes',
+        ease: 'easeOut',
       },
     },
   };
