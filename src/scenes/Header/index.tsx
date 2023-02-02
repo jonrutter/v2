@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { Logo } from '@/components/Logo';
 import { socialLinks } from '@/data/socialLinks';
+import { navLinks } from '@/data/navLinks';
 import { ColorModeSwitch } from '@/components/ColorModeSwitch';
 import { MobileNav } from './MobileNav';
 import { m } from 'framer-motion';
@@ -53,46 +54,16 @@ export const Header = () => {
                   className="flex justify-center items-center space-x-4 lg:space-x-6 text-base font-semibold ml-20"
                   key="site-links"
                 >
-                  <m.li variants={slideDown}>
-                    <Link
-                      to="/"
-                      className="p-1 hover:text-grey-800 focus:text-grey-800 dark:hover:text-white dark:focus:text-white transition-colors"
-                    >
-                      Home
-                    </Link>
-                  </m.li>
-                  <m.li variants={slideDown}>
-                    <Link
-                      to="/#about"
-                      className="p-1 hover:text-grey-800 focus:text-grey-800 dark:hover:text-white dark:focus:text-white transition-colors"
-                    >
-                      About
-                    </Link>
-                  </m.li>
-                  <m.li variants={slideDown}>
-                    <Link
-                      to="/portfolio"
-                      className="p-1 hover:text-grey-800 focus:text-grey-800 dark:hover:text-white dark:focus:text-white transition-colors"
-                    >
-                      Portfolio
-                    </Link>
-                  </m.li>
-                  <m.li variants={slideDown}>
-                    <Link
-                      to="/blog"
-                      className="p-1 hover:text-grey-800 focus:text-grey-800 dark:hover:text-white dark:focus:text-white transition-colors"
-                    >
-                      Blog
-                    </Link>
-                  </m.li>
-                  <m.li variants={slideDown}>
-                    <Link
-                      to="/#contact"
-                      className="p-1 hover:text-grey-800 focus:text-grey-800 dark:hover:text-white dark:focus:text-white transition-colors"
-                    >
-                      Contact
-                    </Link>
-                  </m.li>
+                  {navLinks.map(({ label, url }) => (
+                    <m.li variants={slideDown} key={label}>
+                      <Link
+                        to={url}
+                        className="p-1 hover:text-grey-800 focus:text-grey-800 dark:hover:text-white dark:focus:text-white transition-colors"
+                      >
+                        {label}
+                      </Link>
+                    </m.li>
+                  ))}
                 </ul>
               </nav>
             </>

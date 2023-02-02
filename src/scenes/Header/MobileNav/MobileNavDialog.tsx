@@ -4,6 +4,7 @@ import { AnimatePresence, m } from 'framer-motion';
 import { Dialog } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/solid';
 import { socialLinks } from '@/data/socialLinks';
+import { navLinks } from '@/data/navLinks';
 import { useAnimations } from './useAnimations';
 
 // TODO: close dialog when link pressed
@@ -13,6 +14,7 @@ type Props = {
   onClose: () => void;
 };
 
+/** Renders the slide-in mobile nav dialog. */
 export const MobileNavDialog: React.FC<Props> = ({ open, onClose }) => {
   const { container, slideIn, popUp, bgFade } = useAnimations();
 
@@ -59,21 +61,11 @@ export const MobileNavDialog: React.FC<Props> = ({ open, onClose }) => {
               </div>
               {/* page links */}
               <ul className="flex flex-col space-y-6 px-8 text-lg font-semibold">
-                <m.li variants={slideIn}>
-                  <Link to="/">Home</Link>
-                </m.li>
-                <m.li variants={slideIn}>
-                  <Link to="/#about">About</Link>
-                </m.li>
-                <m.li variants={slideIn}>
-                  <Link to="/portfolio">Portfolio</Link>
-                </m.li>
-                <m.li variants={slideIn}>
-                  <Link to="/blog">Blog</Link>
-                </m.li>
-                <m.li variants={slideIn}>
-                  <Link to="/#contact">Contact</Link>
-                </m.li>
+                {navLinks.map(({ label, url }) => (
+                  <m.li variants={slideIn} key={label}>
+                    <Link to={url}>{label}</Link>
+                  </m.li>
+                ))}
               </ul>
               {/* social links */}
               <ul className="px-6 py-12 flex flex-wrap -mt-4 -ml-8">
