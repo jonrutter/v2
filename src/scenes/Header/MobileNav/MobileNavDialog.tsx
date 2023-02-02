@@ -7,8 +7,6 @@ import { socialLinks } from '@/data/socialLinks';
 import { navLinks } from '@/data/navLinks';
 import { useAnimations } from './useAnimations';
 
-// TODO: close dialog when link pressed
-
 type Props = {
   open: boolean;
   onClose: () => void;
@@ -63,7 +61,9 @@ export const MobileNavDialog: React.FC<Props> = ({ open, onClose }) => {
               <ul className="flex flex-col space-y-6 px-8 text-lg font-semibold">
                 {navLinks.map(({ label, url }) => (
                   <m.li variants={slideIn} key={label}>
-                    <Link to={url}>{label}</Link>
+                    <Link to={url} onClick={onClose}>
+                      {label}
+                    </Link>
                   </m.li>
                 ))}
               </ul>
