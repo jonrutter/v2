@@ -21,7 +21,7 @@ export const Contact = () => {
           <div className="lg:[grid-area:_header]">
             {/* heading */}
             <m.div variants={slideLeft} className="max-w-fit mb-6">
-              <h2 className="text-4xl md:text-5xl font-serif font-semibold mb-4">
+              <h2 className="text-4xl md:text-5xl font-serif font-semibold mb-4 text-grey-800 dark:text-white transition-colors">
                 Contact me
               </h2>
               {/* rainbow gradient underline */}
@@ -31,7 +31,7 @@ export const Contact = () => {
               />
             </m.div>
             <m.div variants={fadeIn}>
-              <p className="opacity-60 max-w-[400px] text-lg">
+              <p className="max-w-[400px] text-lg">
                 I'd love to hear from you! Use this form to get in touch with
                 me, and I'll try to get back to you as soon as I can.
               </p>

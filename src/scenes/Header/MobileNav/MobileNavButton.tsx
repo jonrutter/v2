@@ -7,7 +7,7 @@ type Props = {
 
 export const MobileNavButton: React.FC<Props> = ({ onClick }) => (
   <button
-    className="opacity-80 hover:opacity-100 transition-opacity p-2"
+    className="text-grey-600 dark:text-grey-300 hover:text-grey-800 focus:text-grey-800 dark:hover:text-white dark:focus:text-white transition-colors p-2"
     onClick={onClick}
     aria-label="open the navigation menu"
   >

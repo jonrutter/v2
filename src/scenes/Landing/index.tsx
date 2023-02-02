@@ -17,19 +17,19 @@ export const Landing = () => {
         <h1 className="flex flex-col mb-6 md:mb-8">
           <m.span
             variants={slideUp}
-            className="text-xl md:text-2xl font-cursive text-pink-600 dark:text-pink-400 mb-2 md:mb-4"
+            className="text-xl md:text-2xl font-cursive text-pink-600 dark:text-pink-400 mb-2 md:mb-4 transition-colors"
           >
             Hi, my name's{' '}
           </m.span>
           <m.span
             variants={slideUp}
-            className="text-4xl md:text-6xl font-semibold font-serif"
+            className="text-4xl md:text-6xl font-semibold font-serif text-grey-800 dark:text-white transition-colors"
           >
             Jon Rutter
           </m.span>
         </h1>
         <m.div variants={slideUp}>
-          <p className="text-lg mb-6 md:mb-8 opacity-60">
+          <p className="text-lg mb-6 md:mb-8">
             I'm a front-end engineer specializing in building accessible,
             responsive, and user-focused websites with modern web development
             best practices.

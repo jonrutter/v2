@@ -12,7 +12,7 @@ export const ColorModeSwitch = () => {
     <button
       onClick={() => toggleMode()}
       aria-label="toggle between light and dark mode"
-      className="opacity-80 hover:opacity-100 transition-opacity p-2"
+      className="text-grey-800 dark:text-grey-300 hover:text-grey-800 focus:text-grey-800 dark:hover:text-white dark:focus:text-white transition-colors p-2"
       data-mode={mode}
     >
       {mode === 'light' ? (

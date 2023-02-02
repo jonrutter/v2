@@ -31,7 +31,7 @@ export const MobileNavDialog: React.FC<Props> = ({ open, onClose }) => {
             initial="closed"
             animate="open"
             exit="exit"
-            className="fixed inset-0 bg-indigo-900/20 backdrop-blur-sm z-0"
+            className="fixed inset-0 bg-grey-800/20 backdrop-blur-sm z-0"
             aria-hidden
           />
           <m.nav
@@ -39,14 +39,14 @@ export const MobileNavDialog: React.FC<Props> = ({ open, onClose }) => {
             initial="closed"
             animate="open"
             exit="exit"
-            className="fixed top-0 right-0 bottom-0 w-4/5 max-w-xs text-indigo-900 dark:text-white"
+            className="fixed top-0 right-0 bottom-0 w-4/5 max-w-xs text-grey-800 dark:text-white"
             data-testid="nav-dialog"
             transition={{
               type: 'keyframes',
               ease: 'easeInOut',
             }}
           >
-            <Dialog.Panel className="absolute inset-0 bg-white dark:bg-indigo-900 overflow-y-auto overflow-x-hidden">
+            <Dialog.Panel className="absolute inset-0 bg-white dark:bg-grey-800 overflow-y-auto overflow-x-hidden">
               {/* close button */}
               <div className="flex justify-end px-6 pt-5 pb-12">
                 <button

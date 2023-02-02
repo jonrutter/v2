@@ -24,12 +24,12 @@ export const Form: React.FC<Props> = ({ onSubmit, sent, loading, error }) => {
       <m.div variants={container} initial="hidden" animate="visible">
         <m.h3
           variants={fadeIn}
-          className="font-serif font-semibold text-2xl mb-4"
+          className="font-serif font-semibold text-2xl mb-4 text-grey-800 dark:text-white transition-colors"
         >
           Message sent
         </m.h3>
         <m.div variants={fadeIn}>
-          <p className="opacity-60">
+          <p className="text-lg">
             Thanks for your message! I'll try to get back to you as soon as I
             can!
           </p>
@@ -41,7 +41,7 @@ export const Form: React.FC<Props> = ({ onSubmit, sent, loading, error }) => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-5 mt-7"
+      className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-5 mt-7 text-grey-600 dark:text-grey-300"
     >
       <m.div variants={fadeUp} className="col-span-1">
         <Input label="Name" name="your-name" />

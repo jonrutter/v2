@@ -5,6 +5,20 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { m } from 'framer-motion';
 import { useAnimations } from './useAnimations';
 
+const Link: React.FC<{ href: string; children: React.ReactNode }> = ({
+  href,
+  children,
+}) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noreferrer"
+    className="hover:text-grey-600 focus:text-grey-600 dark:hover:text-grey-300 dark:focus:text-grey-300 transition-colors underline inline-flex items-baseline"
+  >
+    {children}
+  </a>
+);
+
 /** Renders the home page's about section */
 export const About = () => {
   const { container, skillContainer, popUp, slideRight, fadeIn } =
@@ -23,7 +37,7 @@ export const About = () => {
           <div className="w-full max-w-xl">
             {/* heading */}
             <m.div variants={slideRight} className="mb-6 w-auto max-w-fit">
-              <h2 className="text-4xl font-semibold font-serif md:text-5xl mb-4 inline-block">
+              <h2 className="text-4xl font-semibold font-serif md:text-5xl mb-4 inline-block text-grey-800 dark:text-white">
                 About me
               </h2>
               {/* rainbow gradient underline */}
@@ -35,83 +49,51 @@ export const About = () => {
             {/* description */}
             <div className="text-lg mb-8">
               <m.div variants={fadeIn}>
-                <p className="mb-4 opacity-60">
+                <p className="mb-4">
                   Hi! I'm Jon, and I'm a front-end software engineer focusing on
                   building performative, accessible, and user-focused websites
                   with modern technologies like TypeScript and React.
                 </p>
-              </m.div>
-              <m.div variants={fadeIn}>
-                <p className="mb-4 opacity-60">
+                <p className="mb-4">
                   I strongly believe that the web should work for everyone. I
                   approach every project with a focus on modern best practices
                   that emphasize accessibility and mobile responsiveness, so
                   that everyone will be able to use my websites, regardless of
                   disability or device type.
                 </p>
-              </m.div>
-              <m.div variants={fadeIn}>
                 <p className="mb-4">
-                  <span className="opacity-60">I'm also passionate about </span>
-                  <a
-                    href="https://en.wikipedia.org/wiki/Free_and_open-source_software"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="opacity-60 hover:opacity-100 transition-opacity underline"
-                  >
+                  I'm also passionate about{' '}
+                  <Link href="https://en.wikipedia.org/wiki/Free_and_open-source_software">
                     free and open-source software
-                  </a>
-                  <span className="opacity-60">
-                    . I enjoy contributing to open-source projects like{' '}
-                  </span>
-                  <a
-                    href="https://github.com/gatsbyjs/gatsby/pulls?q=is%3Apr+is%3Amerged+author%3Ajonrutter"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="group inline-flex items-baseline underline"
-                  >
+                  </Link>
+                  . I enjoy contributing to open-source projects like{' '}
+                  <Link href="https://github.com/gatsbyjs/gatsby/pulls?q=is%3Apr+is%3Amerged+author%3Ajonrutter">
                     <img
                       src="https://avatars.githubusercontent.com/u/12551863?s=50&v=4"
                       alt=""
                       className="h-5 w-5 mr-1"
                     />
-                    <span className="opacity-60 group-hover:opacity-100 transition-opacity">
-                      Gatsby
-                    </span>
-                  </a>
-                  <span className="opacity-60">, </span>
-                  <a
-                    href="https://github.com/WordPress/openverse-frontend/pulls?q=is%3Apr+author%3Ajonrutter"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="group inline-flex items-baseline underline"
-                  >
+                    <span>Gatsby</span>
+                  </Link>
+                  ,{' '}
+                  <Link href="https://github.com/WordPress/openverse-frontend/pulls?q=is%3Apr+author%3Ajonrutter">
                     <img
                       src="https://avatars.githubusercontent.com/u/276006?s=50&v=4"
                       alt=""
                       className="h-5 w-5 mr-1"
                     />
-                    <span className="opacity-60 group-hover:opacity-100 transition-opacity">
-                      WordPress
-                    </span>
-                  </a>
-                  <span className="opacity-60">, and </span>
-                  <a
-                    href="https://github.com/freeCodeCamp/freeCodeCamp/pulls?q=is%3Apr+is%3Amerged+author%3Ajonrutter"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="group inline-flex items-baseline underline"
-                  >
+                    <span>WordPress</span>
+                  </Link>
+                  , and{' '}
+                  <Link href="https://github.com/freeCodeCamp/freeCodeCamp/pulls?q=is%3Apr+is%3Amerged+author%3Ajonrutter">
                     <img
                       src="https://avatars.githubusercontent.com/u/9892522?s=50&v=4"
                       alt=""
                       className="h-5 w-5 mr-1"
                     />
-                    <span className="opacity-60 group-hover:opacity-100 transition-opacity">
-                      freeCodeCamp
-                    </span>
-                  </a>
-                  <span className="opacity-60">.</span>
+                    <span>freeCodeCamp</span>
+                  </Link>
+                  .
                 </p>
               </m.div>
             </div>
@@ -119,12 +101,12 @@ export const About = () => {
             <section className="mb-8">
               <m.h3
                 variants={fadeIn}
-                className="text-2xl font-semibold font-serif mb-4"
+                className="text-2xl font-semibold font-serif mb-4 text-grey-800 dark:text-white"
               >
                 My skills
               </m.h3>
               <m.div variants={fadeIn}>
-                <p className="mb-4 opacity-60 text-lg">
+                <p className="mb-4 text-lg">
                   Some technologies that I frequently work with include:
                 </p>
               </m.div>
@@ -144,7 +126,7 @@ export const About = () => {
                     <a
                       style={{ borderColor: skill.color }}
                       href={skill.url}
-                      className="py-1 px-2 opacity-80 hover:opacity-100 transition-opacity border inline-block"
+                      className="py-1 px-2 text-grey-800 dark:text-white opacity-80 hover:opacity-100 focus:opacity-100 transition-opacity border inline-block"
                     >
                       {skill.label}
                     </a>
