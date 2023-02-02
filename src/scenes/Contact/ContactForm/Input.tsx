@@ -34,10 +34,10 @@ export const Input = <T extends React.ElementType = 'input'>({
   const id = `contact-${name}`;
 
   // base classes for the input element
-  const className = `text-base py-3 px-4 bg-transparent border-2 outline-none focus:ring-2 focus:ring-indigo-900 dark:focus:ring-white focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-indigo-900 w-full peer ${
+  const className = `text-base py-3 px-4 bg-transparent border-2 outline-none focus:ring-2 focus:ring-grey-800 dark:focus:ring-white focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-grey-800 w-full peer focus:text-grey-900 dark:focus:text-white ${
     error
       ? 'border-pink-600 dark:border-pink-400'
-      : 'border-neon-600 dark:border-neon-400 '
+      : 'border-neon-600 dark:border-neon-400'
   }`;
 
   // create JSX for the relevant input element, based on `as` prop
@@ -70,18 +70,18 @@ export const Input = <T extends React.ElementType = 'input'>({
       {inputElement}
       <label
         htmlFor={id}
-        className={`text-lg font-semibold absolute left-2 top-3 transition-transform motion-reduce:transition-none
-         bg-indigo-50 dark:bg-indigo-900 px-2 ${
+        className={`text-lg font-semibold absolute left-2 top-3 transition-all motion-reduce:transition-none
+         bg-grey-50 dark:bg-grey-800 px-2 ${
            !value
-             ? 'opacity-80 peer-focus:opacity-100 peer-focus:-translate-x-2 peer-focus:-translate-y-8 peer-focus:scale-90 peer-focus:z-0 -z-10'
-             : 'opacity-100 -translate-x-2 -translate-y-8 scale-90 z-0'
+             ? 'peer-focus:text-grey-800 dark:peer-focus:text-white peer-focus:-translate-x-2 peer-focus:-translate-y-8 peer-focus:scale-90 peer-focus:z-0 -z-10'
+             : 'text-grey-800 dark:text-white -translate-x-2 -translate-y-8 scale-90 z-0'
          }`}
       >
         {label}
       </label>
       {error && (
         <span
-          className="italic text-pink-600 dark:text-pink-400 block absolute bottom-0 left-4 z-10 bg-indigo-50 dark:bg-indigo-900 px-2 transition-colors"
+          className="italic text-pink-600 dark:text-pink-400 block absolute bottom-0 left-4 z-10 bg-grey-50 dark:bg-grey-800 px-2 transition-colors"
           role="alert"
         >
           {error.type === 'required'

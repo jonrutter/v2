@@ -16,7 +16,7 @@ export const Header = () => {
 
   return (
     <>
-      <header className="w-full max-w-full flex justify-center items-center px-6 fixed top-0 left-0 right-0 bg-indigo-50 dark:bg-indigo-900 transition-colors z-40">
+      <header className="w-full max-w-full flex justify-center items-center px-6 fixed top-0 left-0 right-0 bg-grey-50 dark:bg-grey-800 transition-colors z-40">
         <div className="w-full max-w-7xl py-4 flex justify-between items-center">
           <div>
             <Logo />
@@ -25,7 +25,7 @@ export const Header = () => {
             variants={container}
             initial="hidden"
             animate="show"
-            className="flex justify-center items-center"
+            className="flex justify-center items-center text-grey-600 dark:text-grey-300"
           >
             <>
               <nav className="hidden md:flex justify-between items-center text-xl">
@@ -41,7 +41,7 @@ export const Header = () => {
                         aria-label={`link to my ${label}`}
                         target="_blank"
                         rel="noreferrer"
-                        className="opacity-80 hover:opacity-100 transition-opacity block p-2"
+                        className="hover:text-grey-800 focus:text-grey-800 dark:hover:text-white dark:focus:text-white transition-colors block p-2"
                       >
                         {icon}
                       </a>
@@ -50,13 +50,13 @@ export const Header = () => {
                 </ul>
                 {/* site links */}
                 <ul
-                  className="flex justify-center items-center space-x-6 lg:space-x-8 text-base font-semibold ml-20"
+                  className="flex justify-center items-center space-x-4 lg:space-x-6 text-base font-semibold ml-20"
                   key="site-links"
                 >
                   <m.li variants={slideDown}>
                     <Link
                       to="/"
-                      className="opacity-80 hover:opacity-100 transition-opacity"
+                      className="p-1 hover:text-grey-800 focus:text-grey-800 dark:hover:text-white dark:focus:text-white transition-colors"
                     >
                       Home
                     </Link>
@@ -64,7 +64,7 @@ export const Header = () => {
                   <m.li variants={slideDown}>
                     <Link
                       to="/#about"
-                      className="opacity-80 hover:opacity-100 transition-opacity"
+                      className="p-1 hover:text-grey-800 focus:text-grey-800 dark:hover:text-white dark:focus:text-white transition-colors"
                     >
                       About
                     </Link>
@@ -72,7 +72,7 @@ export const Header = () => {
                   <m.li variants={slideDown}>
                     <Link
                       to="/portfolio"
-                      className="opacity-80 hover:opacity-100 transition-opacity"
+                      className="p-1 hover:text-grey-800 focus:text-grey-800 dark:hover:text-white dark:focus:text-white transition-colors"
                     >
                       Portfolio
                     </Link>
@@ -80,7 +80,7 @@ export const Header = () => {
                   <m.li variants={slideDown}>
                     <Link
                       to="/blog"
-                      className="opacity-80 hover:opacity-100 transition-opacity"
+                      className="p-1 hover:text-grey-800 focus:text-grey-800 dark:hover:text-white dark:focus:text-white transition-colors"
                     >
                       Blog
                     </Link>
@@ -88,7 +88,7 @@ export const Header = () => {
                   <m.li variants={slideDown}>
                     <Link
                       to="/#contact"
-                      className="opacity-80 hover:opacity-100 transition-opacity"
+                      className="p-1 hover:text-grey-800 focus:text-grey-800 dark:hover:text-white dark:focus:text-white transition-colors"
                     >
                       Contact
                     </Link>
