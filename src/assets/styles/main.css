@@ -2,6 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
+/* fonts */
+@font-face {
+  font-family: 'Seaweed Script';
+  src: local('Seaweed Script'),
+    url('/fonts/SeaweedScript/seaweed-script-latin-400-normal.woff2')
+      format('woff2'),
+    url('/fonts/SeaweedScript/seaweed-script-latin-400-normal.woff')
+      format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans'),
+    url('/fonts/OpenSans/open-sans-latin-400-normal.woff2') format('woff2'),
+    url('/fonts/OpenSans/open-sans-latin-400-normal.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans'),
+    url('/fonts/OpenSans/open-sans-latin-600-normal.woff2') format('woff2'),
+    url('/fonts/OpenSans/open-sans-latin-600-normal.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: local('Playfair Display'),
+    url('/fonts/PlayfairDisplay/playfair-display-latin-600-normal.woff2')
+      format('woff2'),
+    url('/fonts/PlayfairDisplay/playfair-display-latin-600-normal.woff')
+      format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: local('Playfair Display'),
+    url('/fonts/PlayfairDisplay/playfair-display-latin-700-normal.woff2')
+      format('woff2'),
+    url('/fonts/PlayfairDisplay/playfair-display-latin-700-normal.woff')
+      format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
 @layer base {
   :root {
     @apply scroll-smooth motion-reduce:scroll-auto;
