@@ -30,7 +30,7 @@ export const About = () => {
           <div className="w-full max-w-xl">
             {/* heading */}
             <div className="mb-6 w-auto max-w-fit">
-              <h2 className="text-4xl font-semibold font-serif md:text-5xl mb-4 inline-block text-grey-800 dark:text-white">
+              <h2 className="text-4xl font-semibold font-serif md:text-5xl mb-4 inline-block text-grey-800 dark:text-white transition-colors">
                 About me
               </h2>
               {/* rainbow gradient underline */}
@@ -92,7 +92,7 @@ export const About = () => {
             </div>
             {/* skills */}
             <section className="mb-8">
-              <h3 className="text-2xl font-semibold font-serif mb-4 text-grey-800 dark:text-white">
+              <h3 className="text-2xl font-semibold font-serif mb-4 text-grey-800 dark:text-white transition-colors">
                 My skills
               </h3>
               <div>

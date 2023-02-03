@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import type { PageProps } from 'gatsby';
-import { m, AnimatePresence, useReducedMotion } from 'framer-motion';
-import type { Variants } from 'framer-motion';
+import { m, AnimatePresence } from 'framer-motion';
+import { useAnimations } from './useAnimations';
 
 // types
 type AnimationProps = {
@@ -12,7 +12,7 @@ export const AnimatedLogo: React.FC<AnimationProps> = ({
   onLoadingComplete,
 }) => {
   const { fadeInVariants, circleDrawVariants, containerOutVariants } =
-    useVariants();
+    useAnimations();
   return (
     <m.svg
       width="96"
@@ -84,62 +84,6 @@ export const AnimatedLogo: React.FC<AnimationProps> = ({
   );
 };
 
-type VariantGroups = {
-  circleDrawVariants: Variants;
-  fadeInVariants: Variants;
-  containerOutVariants: Variants;
-};
-
-const useVariants = (): VariantGroups => {
-  const reduceMotion = useReducedMotion();
-  const circleDrawVariants: Variants = {
-    start: {
-      ...(reduceMotion
-        ? {
-            opacity: 0,
-            pathLength: 1,
-          }
-        : {
-            opacity: 1,
-            pathLength: 0,
-          }),
-    },
-    finish: {
-      pathLength: 1,
-      opacity: 1,
-      transition: {
-        delay: 0.3,
-        duration: 0.9,
-        type: 'keyframes',
-        ease: 'linear',
-      },
-    },
-  };
-  const fadeInVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { delay: 1, duration: 0.6 },
-    },
-  };
-  const containerOutVariants: Variants = {
-    start: { opacity: 1, scale: 1 },
-    exit: {
-      ...(reduceMotion ? {} : { scale: 0.1 }),
-      opacity: 0,
-      transition: {
-        delay: 2.7,
-        duration: 0.3,
-      },
-    },
-  };
-  return {
-    circleDrawVariants,
-    fadeInVariants,
-    containerOutVariants,
-  };
-};
-
 type Props = {
   location: PageProps['location'];
   children: React.ReactNode;
@@ -167,34 +111,42 @@ export const PageLoader: React.FC<Props> = ({ location, children }) => {
     }
   }, [location.pathname, hasLoaded]);
 
-  if (loading) {
-    return (
+  return (
+    <>
       <AnimatePresence>
-        <m.div
-          key="wrapper"
-          className="min-h-screen min-w-screen h-screen w-screen overflow-hidden bg-grey-900 
-    flex justify-center items-center"
-          initial={{ opacity: 1 }}
-          animate={{ opacity: 1 }}
-          exit={{
-            opacity: 0,
-            transition: {
-              duration: 0.3,
-            },
-          }}
-          transition={{ duration: 0.6 }}
-        >
+        {loading ? (
           <m.div
+            key="loader-animation-wrapper"
+            className="fixed inset-0 h-full w-full overflow-hidden bg-grey-900 
+flex justify-center items-center z-[100]"
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
+            exit={{
+              opacity: 0,
+              transition: {
+                duration: 0.3,
+              },
+            }}
+          >
+            <m.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.1, duration: 0 }}
+            >
+              <AnimatedLogo onLoadingComplete={setLoadingDone} />
+            </m.div>
+          </m.div>
+        ) : (
+          <m.div
+            key="content-wrapper"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0 }}
+            transition={{ delay: 0.2, duration: 0.3 }}
           >
-            <AnimatedLogo onLoadingComplete={setLoadingDone} />
+            {children}
           </m.div>
-        </m.div>
+        )}
       </AnimatePresence>
-    );
-  } else {
-    return <>{children}</>;
-  }
+    </>
+  );
 };

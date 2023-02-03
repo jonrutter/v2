@@ -20,7 +20,7 @@ export const useAnimations = (): {
       transition: {
         delay: 0.2,
         duration: 0.3,
-        staggerChildren: reduceMotion ? 0 : 0.15,
+        staggerChildren: reduceMotion ? 0 : 0.1,
         delayChildren: 0.4,
       },
     },
@@ -42,7 +42,7 @@ export const useAnimations = (): {
       opacity: 1,
       x: 0,
       transition: {
-        duration: 0.3,
+        duration: 0.2,
       },
     },
   };
@@ -56,7 +56,7 @@ export const useAnimations = (): {
       scale: 1,
       opacity: 1,
       transition: {
-        duration: 0.3,
+        duration: 0.2,
       },
     },
   };
