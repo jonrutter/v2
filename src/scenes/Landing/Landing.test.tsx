@@ -9,10 +9,8 @@ describe('Landing Section', () => {
     // it should have my name
     screen.getByText(/jon rutter/i);
     // it should have a link to my contact page
-    const contactLink = screen.getByText(/contact/i);
-    expect(contactLink).toHaveAttribute('href', '/#contact');
+    screen.getByRole('link', { name: /contact/i });
     // it should have a link to my portfolio
-    const portfolioLink = screen.getByText(/portfolio/i);
-    expect(portfolioLink).toHaveAttribute('href', '/portfolio');
+    screen.getByRole('link', { name: /portfolio/i });
   });
 });

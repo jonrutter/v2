@@ -28,7 +28,7 @@ export const Landing = () => {
             </Button>
           </div>
           <div className="grid grid-cols-1">
-            <Button to="/portfolio" variant="secondary">
+            <Button to="/#portfolio" variant="secondary">
               My portfolio
             </Button>
           </div>
