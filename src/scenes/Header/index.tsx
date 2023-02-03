@@ -5,16 +5,12 @@ import { socialLinks } from '@/data/socialLinks';
 import { navLinks } from '@/data/navLinks';
 import { ColorModeSwitch } from '@/components/ColorModeSwitch';
 import { MobileNav } from './MobileNav';
-import { m } from 'framer-motion';
-import { useAnimations } from './useAnimations';
 
 // TODO: add blog dropdown once blog functionality is added
 // TODO: consider using custom calculated delays instead of staggerChildren, because staggerChildren will wait for hidden elements (thus creating a huge delay on small screens)
 
 /** Renders the site header */
 export const Header = () => {
-  const { container, slideDown, popUp } = useAnimations();
-
   return (
     <>
       <header className="w-full max-w-full flex justify-center items-center px-6 fixed top-0 left-0 right-0 bg-grey-50 dark:bg-grey-800 transition-colors z-40">
@@ -22,12 +18,7 @@ export const Header = () => {
           <div>
             <Logo />
           </div>
-          <m.div
-            variants={container}
-            initial="hidden"
-            animate="show"
-            className="flex justify-center items-center text-grey-600 dark:text-grey-300"
-          >
+          <div className="flex justify-center items-center text-grey-600 dark:text-grey-300">
             <>
               <nav className="hidden md:flex justify-between items-center text-xl">
                 {/* social links */}
@@ -36,7 +27,7 @@ export const Header = () => {
                   key="social-links"
                 >
                   {socialLinks.map(({ label, icon, url }) => (
-                    <m.li key={label} variants={popUp} className="inline-block">
+                    <li key={label} className="inline-block">
                       <a
                         href={url}
                         aria-label={`link to my ${label}`}
@@ -46,7 +37,7 @@ export const Header = () => {
                       >
                         {icon}
                       </a>
-                    </m.li>
+                    </li>
                   ))}
                 </ul>
                 {/* site links */}
@@ -55,28 +46,25 @@ export const Header = () => {
                   key="site-links"
                 >
                   {navLinks.map(({ label, url }) => (
-                    <m.li variants={slideDown} key={label}>
+                    <li key={label}>
                       <Link
                         to={url}
                         className="p-1 hover:text-grey-800 focus:text-grey-800 dark:hover:text-white dark:focus:text-white transition-colors"
                       >
                         {label}
                       </Link>
-                    </m.li>
+                    </li>
                   ))}
                 </ul>
               </nav>
             </>
-            <m.div className="flex items-center ml-20" variants={popUp}>
+            <div className="flex items-center ml-20">
               <ColorModeSwitch />
-            </m.div>
-            <m.div
-              className="flex items-center ml-4 lg:hidden"
-              variants={popUp}
-            >
+            </div>
+            <div className="flex items-center ml-4 lg:hidden">
               <MobileNav />
-            </m.div>
-          </m.div>
+            </div>
+          </div>
         </div>
         <div className="h-px absolute bottom-0 left-0 right-0 bg-gradient-to-r from-neon-400 to-pink-400" />
       </header>

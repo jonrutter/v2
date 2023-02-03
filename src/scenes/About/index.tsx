@@ -21,22 +21,15 @@ const Link: React.FC<{ href: string; children: React.ReactNode }> = ({
 
 /** Renders the home page's about section */
 export const About = () => {
-  const { container, skillContainer, popUp, slideRight, fadeIn } =
-    useAnimations();
+  const { skillContainer, popUp } = useAnimations();
   return (
     <div className="w-full h-full min-h-[calc(100vh-5rem)] py-20 md:py-36">
       <div className="w-full max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 lg:justify-between lg:contents-between">
         {/* left / top box - text content */}
-        <m.section
-          variants={container}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          className="flex justify-center lg:justify-start"
-        >
+        <section className="flex justify-center lg:justify-start">
           <div className="w-full max-w-xl">
             {/* heading */}
-            <m.div variants={slideRight} className="mb-6 w-auto max-w-fit">
+            <div className="mb-6 w-auto max-w-fit">
               <h2 className="text-4xl font-semibold font-serif md:text-5xl mb-4 inline-block text-grey-800 dark:text-white">
                 About me
               </h2>
@@ -45,10 +38,10 @@ export const About = () => {
                 className="h-[2px] bg-gradient-to-r from-neon-400 to-pink-400 w-2/3"
                 aria-hidden
               />
-            </m.div>
+            </div>
             {/* description */}
             <div className="text-lg mb-8">
-              <m.div variants={fadeIn}>
+              <div>
                 <p className="mb-4">
                   Hi! I'm Jon, and I'm a front-end software engineer focusing on
                   building performative, accessible, and user-focused websites
@@ -95,21 +88,18 @@ export const About = () => {
                   </Link>
                   .
                 </p>
-              </m.div>
+              </div>
             </div>
             {/* skills */}
             <section className="mb-8">
-              <m.h3
-                variants={fadeIn}
-                className="text-2xl font-semibold font-serif mb-4 text-grey-800 dark:text-white"
-              >
+              <h3 className="text-2xl font-semibold font-serif mb-4 text-grey-800 dark:text-white">
                 My skills
-              </m.h3>
-              <m.div variants={fadeIn}>
+              </h3>
+              <div>
                 <p className="mb-4 text-lg">
                   Some technologies that I frequently work with include:
                 </p>
-              </m.div>
+              </div>
               <m.ul
                 variants={skillContainer}
                 initial="hidden"
@@ -135,7 +125,7 @@ export const About = () => {
               </m.ul>
             </section>
           </div>
-        </m.section>
+        </section>
         {/* right / bottom box - image */}
         <div className="flex items-center justify-center lg:justify-end">
           <ImageBorders>

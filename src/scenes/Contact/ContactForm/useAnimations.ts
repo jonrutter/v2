@@ -12,7 +12,7 @@ export const useAnimations = (): {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.1,
       },
     },
   };
@@ -20,7 +20,7 @@ export const useAnimations = (): {
   const fadeUp: Variants = {
     hidden: {
       opacity: 0,
-      ...(shouldReduceMotion ? {} : { y: '25%' }),
+      ...(shouldReduceMotion ? {} : { y: '50%' }),
     },
     visible: {
       opacity: 1,

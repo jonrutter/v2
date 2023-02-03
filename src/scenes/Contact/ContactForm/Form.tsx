@@ -17,18 +17,18 @@ type Props = {
 /** Handles rendering the form UI. */
 export const Form: React.FC<Props> = ({ onSubmit, sent, loading, error }) => {
   const { handleSubmit } = useFormContext<FormDataType>();
-  const { container, fadeUp, fadeIn } = useAnimations();
+  const { container, fadeUp } = useAnimations();
 
   if (sent) {
     return (
       <m.div variants={container} initial="hidden" animate="visible">
         <m.h3
-          variants={fadeIn}
+          variants={fadeUp}
           className="font-serif font-semibold text-2xl mb-4 text-grey-800 dark:text-white transition-colors"
         >
           Message sent
         </m.h3>
-        <m.div variants={fadeIn}>
+        <m.div variants={fadeUp}>
           <p className="text-lg">
             Thanks for your message! I'll try to get back to you as soon as I
             can!
@@ -43,19 +43,19 @@ export const Form: React.FC<Props> = ({ onSubmit, sent, loading, error }) => {
       onSubmit={handleSubmit(onSubmit)}
       className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-5 mt-7 text-grey-600 dark:text-grey-300"
     >
-      <m.div variants={fadeUp} className="col-span-1">
+      <div className="col-span-1">
         <Input label="Name" name="your-name" />
-      </m.div>
-      <m.div variants={fadeUp} className="col-span-1">
+      </div>
+      <div className="col-span-1">
         <Input label="Email" name="your-email" type="email" />
-      </m.div>
-      <m.div variants={fadeUp} className="col-span-full">
+      </div>
+      <div className="col-span-full">
         <Input label="Subject" name="your-subject" />
-      </m.div>
-      <m.div variants={fadeUp} className="col-span-full">
+      </div>
+      <div className="col-span-full">
         <Input label="Message" name="your-message" as="textarea" />
-      </m.div>
-      <m.div variants={fadeUp} className="col-span-full">
+      </div>
+      <div className="col-span-full">
         {loading ? (
           <div className="flex max-w-[200px] justify-center">
             <Spinner label="Sending" />
@@ -65,7 +65,7 @@ export const Form: React.FC<Props> = ({ onSubmit, sent, loading, error }) => {
             Send message
           </Button>
         )}
-      </m.div>
+      </div>
       {error && (
         <div className="col-span-full">
           <span role="alert" className="block" aria-label={error}>
