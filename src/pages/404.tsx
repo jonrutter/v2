@@ -1,49 +1,33 @@
-import * as React from "react"
-import { Link, HeadFC, PageProps } from "gatsby"
-
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
+import * as React from 'react';
+import type { HeadFC, PageProps } from 'gatsby';
+import { Layout } from '@/components/Layout';
+import { Button } from '@/components/Button';
 
 const NotFoundPage: React.FC<PageProps> = () => {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry 😔, we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
-  )
-}
+    <Layout>
+      <div className="w-full min-h-content py-20 md:py-36">
+        <div className="w-full max-w-[500px] mx-auto">
+          <h1 className="flex flex-col mb-6 md:mb-8">
+            <span className="text-xl md:text-2xl font-cursive text-pink-600 dark:text-pink-400 mb-1 md:mb-2 transition-colors">
+              Oops.{' '}
+            </span>
+            <span className="text-4xl md:text-6xl font-semibold font-serif text-grey-800 dark:text-white transition-colors">
+              404
+            </span>
+          </h1>
 
-export default NotFoundPage
+          <p className="text-lg mb-6 md:mb-8">
+            Sorry! The page you were looking for does not exit. It may have been
+            moved, deleted, or never existed at all. Try going back:
+          </p>
+          <Button to="/">Home</Button>
+        </div>
+      </div>
+    </Layout>
+  );
+};
 
-export const Head: HeadFC = () => <title>Not found</title>
+export default NotFoundPage;
+
+export const Head: HeadFC = () => <title>Not found</title>;

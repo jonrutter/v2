@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    @apply scroll-smooth motion-reduce:scroll-auto;
+  }
+  html,
+  body {
+    @apply dark:bg-[#01001a];
+  }
+
+  .contact-section-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem 5rem;
+  }
+  @media screen and (min-width: 1024px) {
+    .contact-section-grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        '. header'
+        'image form';
+      justify-items: space-between;
+    }
+  }
+
+  /* loading spinner animations */
+  @keyframes rotate-outer {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes rotate-inner {
+    0% {
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dasharray: 90, 200;
+      stroke-dashoffset: -35px;
+    }
+    100% {
+      stroke-dashoffset: -125px;
+    }
+  }
+  @keyframes loading-dots {
+    0% {
+      opacity: 0.2;
+    }
+    40% {
+      opacity: 0.8;
+    }
+    50% {
+      opacity: 1;
+    }
+    60% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0.2;
+    }
+  }
+}
+
+@layer utilities {
+  .animate-rotate-outer {
+    animation: rotate-outer 2s linear infinite;
+  }
+  .animate-rotate-inner {
+    animation: rotate-inner 1.5s ease-in-out infinite;
+  }
+
+  .animate-dots circle {
+    opacity: 0;
+    animation: loading-dots 1.2s ease-in-out infinite;
+  }
+  .animate-dots circle:nth-child(1) {
+    animation-delay: 0.3s;
+  }
+  .animate-dots circle:nth-child(2) {
+    animation-delay: 0.6s;
+  }
+  .animate-dots circle:nth-child(3) {
+    animation-delay: 0.9s;
+  }
+}
