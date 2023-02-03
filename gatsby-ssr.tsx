@@ -17,14 +17,13 @@ import { LazyMotion, domAnimation } from 'framer-motion';
 
 // util components
 import { InjectInitialDarkMode } from '@/components/InjectInitialDarkMode';
-// import { PageLoader } from '@/components/PageLoader';
+import { PageLoader } from '@/components/PageLoader';
 
-// TODO: wrap pages with custom loading component
 export const wrapPageElement: GatsbySSR['wrapPageElement'] = ({
   element,
   props,
 }) => {
-  return <>{element}</>;
+  return <PageLoader {...props}>{element}</PageLoader>;
 };
 
 export const wrapRootElement: GatsbySSR['wrapRootElement'] = ({ element }) => (
