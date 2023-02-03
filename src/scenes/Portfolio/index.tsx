@@ -8,7 +8,6 @@ import { links } from '@/data/socialLinks';
 
 export const Portfolio = () => {
   const portfolioItems = usePortfolioQuery();
-  console.log(portfolioItems);
   const { container, popUp } = useAnimations();
 
   return (
@@ -34,11 +33,13 @@ export const Portfolio = () => {
             viewport={{ once: true, amount: 'some' }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-[400px] mx-auto md:max-w-full mb-12"
           >
-            {portfolioItems.map((item) => (
-              <m.div variants={popUp} key={item.id}>
-                <PortfolioCard {...item} />
-              </m.div>
-            ))}
+            {!portfolioItems || portfolioItems.length <= 0
+              ? null
+              : portfolioItems.map((item) => (
+                  <m.div variants={popUp} key={item.id}>
+                    <PortfolioCard {...item} />
+                  </m.div>
+                ))}
           </m.div>
           <div className="flex justify-center">
             <Button

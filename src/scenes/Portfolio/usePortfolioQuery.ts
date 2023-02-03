@@ -32,5 +32,5 @@ export const usePortfolioQuery = (): PortfolioItemType[] => {
       }
     }
   `);
-  return data.allPortfolioJson.nodes;
+  return data?.allPortfolioJson?.nodes;
 };
