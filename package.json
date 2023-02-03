@@ -23,9 +23,6 @@
     "build-portfolio": "bash ./scripts/build-portfolio.sh"
   },
   "dependencies": {
-    "@fontsource/open-sans": "^4.5.13",
-    "@fontsource/playfair-display": "^4.5.12",
-    "@fontsource/seaweed-script": "^4.5.10",
     "@headlessui/react": "^1.7.7",
     "@heroicons/react": "^2.0.13",
     "@mdx-js/react": "^2.2.1",
