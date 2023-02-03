@@ -17,7 +17,7 @@ export const portfolioItems: PortfolioItemPrebuildType[] = [
   {
     title: 'React Film Database',
     description:
-      'React Film Database is a web application that allows users to browse and search for details about films.',
+      'A web application that allows users to browse and search for various information about their favorite films.',
     demoUrl: 'https://rfdb.netlify.app/',
     codeUrl: 'https://github.com/jonrutter/react-film-database',
     type: 'app',
@@ -27,7 +27,7 @@ export const portfolioItems: PortfolioItemPrebuildType[] = [
   {
     title: 'TaskList',
     description:
-      'TaskList is a lightweight, intuitive, open source to-do list app, that supports tagging and filtering tasks by labels, due date, and priority level.',
+      'A lightweight, intuitive, open source to-do list app. It supports creating, updating, and deleting tasks, as well as filtering and sorting tasks by label, due date, and priority level.',
     demoUrl: 'https://tasklist-rutterjt.netlify.app/',
     codeUrl: 'https://github.com/jonrutter/tasklist',
     type: 'app',
@@ -37,7 +37,7 @@ export const portfolioItems: PortfolioItemPrebuildType[] = [
   {
     title: 'Bringing Glory',
     description:
-      'A website that I built for a family ministry. Built with Gatsby and a headless CMS. Features a light/dark mode switcher.',
+      'A client website that I built for an online family ministry. The website features a fully responsive front-end, and a back-end content management system for easy content editing.',
     demoUrl: 'https://www.bringingglory.com/',
     codeUrl: '',
     type: 'website',
@@ -47,7 +47,7 @@ export const portfolioItems: PortfolioItemPrebuildType[] = [
   {
     title: 'Blogr Landing Page',
     description:
-      'A demo landing page for a fictional blogging platform, with interactive navigation components. Built with Gatsby and Tailwind CSS, and deployed with Netlify.',
+      'A demo landing page for a fictional blogging platform. Features a fully responsive design with interactive navigation components.',
     demoUrl: 'https://jonrutter-blogr-landing-page.netlify.app/',
     codeUrl: 'https://github.com/jonrutter/blogr-demo',
     type: 'website',
@@ -56,7 +56,8 @@ export const portfolioItems: PortfolioItemPrebuildType[] = [
   },
   {
     title: 'Fylo Landing Page',
-    description: 'A demo landing page for a fictitious cloud storage company.',
+    description:
+      'A demo landing page for a fictitious cloud storage company. Features a fully responsive design.',
     demoUrl: 'https://jonrutter-fylo-landing-page.netlify.app/',
     codeUrl: 'https://github.com/rutterjt-archive/front-end-projects',
     type: 'website',
@@ -66,7 +67,7 @@ export const portfolioItems: PortfolioItemPrebuildType[] = [
   {
     title: 'Manage Landing Page',
     description:
-      'A demo landing page for a fictitious software company, with various interactive elements.',
+      'A demo landing page for a fictitious software company. Features a fully responsive design with various interactive page components.',
     demoUrl: 'https://jonrutter-manage-landing.netlify.app/',
     codeUrl: 'https://github.com/jonrutter/manage-demo',
     type: 'website',
@@ -86,7 +87,7 @@ export const portfolioItems: PortfolioItemPrebuildType[] = [
   {
     title: 'Grocery List',
     description:
-      'A lightweight, intuitive grocery list progressive web app, built with TypeScript, React, and Tailwind CSS.',
+      "A lightweight, easy-to-use grocery list web app. Supports adding and deleting grocery list items.  It is a progressive web app, so it can be saved directly to the user's home screen, and used offline.",
     demoUrl: 'https://jonrutter-grocery.netlify.app/',
     codeUrl: 'https://github.com/jonrutter/grocery-list',
     type: 'app',
@@ -114,8 +115,7 @@ export const portfolioItems: PortfolioItemPrebuildType[] = [
   },
   {
     title: 'Huddle Landing Page',
-    description:
-      'A demo landing page for a fictional software company. Built with Gatsby and Tailwind CSS, and deployed with Netlify.',
+    description: 'A demo landing page for a fictional software company.',
     demoUrl: 'https://jonrutter-huddle.vercel.app/',
     codeUrl: 'https://github.com/jonrutter/huddle-demo',
     type: 'website',
