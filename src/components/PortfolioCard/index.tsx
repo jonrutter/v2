@@ -111,28 +111,28 @@ export const PortfolioCard: React.FC<PortfolioItemType> = ({
                         ))}
                       </ul>
                     )}
-                    <div className="flex justify-end items-center space-x-4">
+                    <div className="flex justify-end flex-wrap items-center -ml-4 -mt-4">
                       {codeUrl && (
                         <a
                           href={codeUrl}
                           target="_blank"
                           rel="noreferrer"
-                          aria-label="view project code"
-                          className="p-2"
+                          className="p-2 ml-4 mt-4 flex items-center"
                         >
-                          <GitHubIcon aria-hidden className="w-6 h-6" />
+                          Code{' '}
+                          <GitHubIcon aria-hidden className="w-5 h-5 ml-2" />
                         </a>
                       )}
                       <a
                         href={demoUrl}
                         target="_blank"
                         rel="noreferrer"
-                        aria-label="view project demo"
-                        className="p-2"
+                        className="p-2 ml-4 mt-4 flex items-center"
                       >
+                        Live site{' '}
                         <ArrowTopRightOnSquareIcon
                           aria-hidden
-                          className="w-6 h-6"
+                          className="w-5 h-5 ml-2"
                         />
                       </a>
                     </div>
