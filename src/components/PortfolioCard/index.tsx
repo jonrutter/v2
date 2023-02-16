@@ -9,6 +9,7 @@ import {
 import { GitHubIcon } from '../icons/GitHub';
 import { AnimatePresence, m } from 'framer-motion';
 import { useAnimations } from './useAnimations';
+import { SkillButton } from '../SkillButton';
 
 export const PortfolioCard: React.FC<PortfolioItemType> = ({
   title,
@@ -103,17 +104,9 @@ export const PortfolioCard: React.FC<PortfolioItemType> = ({
                     </p>
                     {skills.length > 0 && (
                       <ul className="flex flex-wrap mb-12 -ml-2 -mt-6">
-                        {skills.map(({ label, url, color }) => (
-                          <li key={url} className="ml-4 mt-6">
-                            <a
-                              href={url}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="py-1 px-2 transition-opacity opacity-80 hover:opacity-100 focus:opacity-100 border inline-block"
-                              style={{ borderColor: color }}
-                            >
-                              {label}
-                            </a>
+                        {skills.map((skill) => (
+                          <li key={skill.url} className="ml-4 mt-6">
+                            <SkillButton {...skill} />
                           </li>
                         ))}
                       </ul>
