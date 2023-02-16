@@ -4,6 +4,7 @@ import { ImageBorders } from '@/components/ImageBorders';
 import { StaticImage } from 'gatsby-plugin-image';
 import { m } from 'framer-motion';
 import { useAnimations } from './useAnimations';
+import { SkillButton } from '@/components/SkillButton';
 
 const Link: React.FC<{ href: string; children: React.ReactNode }> = ({
   href,
@@ -113,13 +114,7 @@ export const About = () => {
                     key={skill.label}
                     className="mt-3 ml-4 inline-block"
                   >
-                    <a
-                      style={{ borderColor: skill.color }}
-                      href={skill.url}
-                      className="py-1 px-2 text-grey-800 dark:text-white opacity-80 hover:opacity-100 focus:opacity-100 transition-opacity border inline-block"
-                    >
-                      {skill.label}
-                    </a>
+                    <SkillButton {...skill} />
                   </m.li>
                 ))}
               </m.ul>

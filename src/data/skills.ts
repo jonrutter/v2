@@ -1,6 +1,7 @@
 import type { SkillType } from '@content/portfolio/types';
 import {
   JavaScript,
+  NextJS,
   TypeScript,
   React,
   Gatsby,
@@ -15,6 +16,7 @@ export const skills: SkillType[] = [
   JavaScript,
   TypeScript,
   React,
+  NextJS,
   Gatsby,
   Tailwind,
   Redux,

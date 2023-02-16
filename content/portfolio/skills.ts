@@ -18,6 +18,12 @@ export const TypeScript: SkillType = {
   url: 'https://www.typescriptlang.org/',
 };
 
+export const NextJS: SkillType = {
+  label: 'Next.js',
+  color: '#000',
+  url: 'https://nextjs.org/'
+}
+
 export const Gatsby: SkillType = {
   label: 'Gatsby',
   color: '#663399',

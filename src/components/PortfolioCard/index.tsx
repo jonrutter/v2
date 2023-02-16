@@ -9,6 +9,7 @@ import {
 import { GitHubIcon } from '../icons/GitHub';
 import { AnimatePresence, m } from 'framer-motion';
 import { useAnimations } from './useAnimations';
+import { SkillButton } from '../SkillButton';
 
 export const PortfolioCard: React.FC<PortfolioItemType> = ({
   title,
@@ -103,43 +104,35 @@ export const PortfolioCard: React.FC<PortfolioItemType> = ({
                     </p>
                     {skills.length > 0 && (
                       <ul className="flex flex-wrap mb-12 -ml-2 -mt-6">
-                        {skills.map(({ label, url, color }) => (
-                          <li key={url} className="ml-4 mt-6">
-                            <a
-                              href={url}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="py-1 px-2 transition-opacity opacity-80 hover:opacity-100 focus:opacity-100 border inline-block"
-                              style={{ borderColor: color }}
-                            >
-                              {label}
-                            </a>
+                        {skills.map((skill) => (
+                          <li key={skill.url} className="ml-4 mt-6">
+                            <SkillButton {...skill} />
                           </li>
                         ))}
                       </ul>
                     )}
-                    <div className="flex justify-end items-center space-x-4">
+                    <div className="flex justify-end flex-wrap items-center -ml-4 -mt-4">
                       {codeUrl && (
                         <a
                           href={codeUrl}
                           target="_blank"
                           rel="noreferrer"
-                          aria-label="view project code"
-                          className="p-2"
+                          className="p-2 ml-4 mt-4 flex items-center"
                         >
-                          <GitHubIcon aria-hidden className="w-6 h-6" />
+                          Code{' '}
+                          <GitHubIcon aria-hidden className="w-5 h-5 ml-2" />
                         </a>
                       )}
                       <a
                         href={demoUrl}
                         target="_blank"
                         rel="noreferrer"
-                        aria-label="view project demo"
-                        className="p-2"
+                        className="p-2 ml-4 mt-4 flex items-center"
                       >
+                        Live site{' '}
                         <ArrowTopRightOnSquareIcon
                           aria-hidden
-                          className="w-6 h-6"
+                          className="w-5 h-5 ml-2"
                         />
                       </a>
                     </div>

@@ -101,12 +101,12 @@ describe('FlipCard', () => {
     expect(link2).toHaveAttribute('href', skill2.url);
     // link to code
     const codeLink = await screen.findByRole('link', {
-      name: /view project code/i,
+      name: /(view project )?code/i,
     });
     expect(codeLink).toHaveAttribute('href', props.codeUrl);
     // link to demo
     const demoLink = await screen.findByRole('link', {
-      name: /view project demo/i,
+      name: /(view project )?(demo|(live )?site)/i,
     });
     expect(demoLink).toHaveAttribute('href', props.demoUrl);
   });

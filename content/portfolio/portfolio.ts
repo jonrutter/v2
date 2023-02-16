@@ -2,6 +2,7 @@ import type { PortfolioItemPrebuildType } from './types';
 
 import {
   React,
+  NextJS,
   TypeScript,
   MaterialUI,
   CSS,
@@ -21,7 +22,7 @@ export const portfolioItems: PortfolioItemPrebuildType[] = [
     demoUrl: 'https://rfdb.netlify.app/',
     codeUrl: 'https://github.com/jonrutter/react-film-database',
     type: 'app',
-    skills: [React, Tailwind, TypeScript],
+    skills: [NextJS, React, Tailwind, TypeScript],
     img: 'images/rfdb.png',
   },
   {
