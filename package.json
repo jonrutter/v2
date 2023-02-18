@@ -6,7 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint && prettier --check .",
+    "lint:fix": "eslint --max-warnings 0 --ignore-path .gitignore --fix . && prettier --write .",
+    "typecheck": "tsc --noEmit",
+    "test": "jest",
+    "test:dev": "npm run test -- --coverage --watch",
+    "test:all": "npm run test -- --coverage --watchAll"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.11",
