@@ -1,9 +1,5 @@
 node_modules/
-.cache/
-public
-src/gatsby-types.d.ts
+next-env.d.ts
+.next/
 
-coverage/
-
-content/portfolio/build/
 content/portfolio/portfolio.json
