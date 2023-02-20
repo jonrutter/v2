@@ -1,4 +1,4 @@
-import { IGatsbyImageData } from 'gatsby-plugin-image';
+import type { StaticImageData } from 'next/image';
 
 export type SkillType = {
   label: string;
@@ -6,24 +6,13 @@ export type SkillType = {
   url: string;
 };
 
-export type PortfolioItemDraftType = {
+export type PortfolioItemType = {
   title: string;
   description: string;
   demoUrl: string;
   codeUrl?: string;
   type: 'app' | 'website';
   skills: SkillType[];
-};
-
-export type PortfolioItemPrebuildType = {
-  img: string;
-} & PortfolioItemDraftType;
-
-export type PortfolioItemType = {
-  img: {
-    childImageSharp: {
-      gatsbyImageData: IGatsbyImageData;
-    };
-  } | null;
+  img: StaticImageData;
   id: string;
-} & PortfolioItemDraftType;
+};
