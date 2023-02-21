@@ -1,18 +1,17 @@
 import React, { ComponentPropsWithoutRef } from 'react';
-import { Link } from 'gatsby';
 
-type Props<T extends React.ElementType = typeof Link> = {
+type BaseProps<T extends React.ElementType = 'button'> = {
   as?: T;
   variant?: 'primary' | 'secondary';
 };
 
-export const Button = <T extends React.ElementType = typeof Link>({
+export const Button = <T extends React.ElementType = 'button'>({
   as,
   variant = 'primary',
   children,
   ...rest
-}: Props<T> & Omit<ComponentPropsWithoutRef<T>, keyof Props<T>>) => {
-  const Tag = as || Link;
+}: BaseProps<T> & Omit<ComponentPropsWithoutRef<T>, keyof BaseProps<T>>) => {
+  const Tag = as || 'button';
   return (
     <Tag
       {...rest}
