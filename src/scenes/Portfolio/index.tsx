@@ -1,13 +1,14 @@
 import React from 'react';
 import { PortfolioCard } from '@/components/PortfolioCard';
-import { usePortfolioQuery } from './usePortfolioQuery';
 import { useAnimations } from './useAnimations';
 import { m } from 'framer-motion';
 import { Button } from '@/components/Button';
 import { links } from '@/data/socialLinks';
+import type { PortfolioItemType } from '@content/portfolio/types';
 
-export const Portfolio = () => {
-  const portfolioItems = usePortfolioQuery();
+export const Portfolio: React.FC<{ list: PortfolioItemType[] }> = ({
+  list,
+}) => {
   const { container, popUp } = useAnimations();
 
   return (
@@ -33,9 +34,9 @@ export const Portfolio = () => {
             viewport={{ once: true, amount: 'some' }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-[400px] mx-auto md:max-w-full mb-12"
           >
-            {!portfolioItems || portfolioItems.length <= 0
+            {list.length <= 0
               ? null
-              : portfolioItems.map((item) => (
+              : list.map((item) => (
                   <m.div variants={popUp} key={item.id}>
                     <PortfolioCard {...item} />
                   </m.div>
