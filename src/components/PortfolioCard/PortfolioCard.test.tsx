@@ -1,5 +1,5 @@
 import React from 'react';
-import { renderWithProviders as render, screen } from '@test/utils';
+import { renderWithProviders as render, screen } from '@/test/utils';
 import userEvent from '@testing-library/user-event';
 import { PortfolioCard } from '.';
 import type { PortfolioItemType } from '@content/portfolio/types';

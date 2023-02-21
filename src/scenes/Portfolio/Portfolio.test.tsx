@@ -1,6 +1,5 @@
 import React from 'react';
-import { renderWithProviders as render, screen } from '@test/utils';
-
+import { renderWithProviders as render, screen } from '@/test/utils';
 import { Portfolio } from '.';
 
 describe('Portfolio Section', () => {

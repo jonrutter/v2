@@ -1,9 +1,9 @@
 import React from 'react';
-import { renderWithProviders as render, screen, waitFor } from '@test/utils';
+import { renderWithProviders as render, screen, waitFor } from '@/test/utils';
 import userEvent from '@testing-library/user-event';
 import { Contact } from '.';
 import { ENDPOINT } from './ContactForm/api';
-import { server, rest } from '@test/mock-contact-form/server';
+import { server, rest } from '@/test/mock-contact-form/server';
 
 const labels = [/name/i, /email/i, /subject/i, /message/i];
 const dummyValues = [
