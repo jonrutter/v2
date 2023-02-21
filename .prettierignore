@@ -1,5 +1,7 @@
 node_modules/
 next-env.d.ts
 .next/
+.swc/
+coverage/
 
 content/portfolio/portfolio.json
