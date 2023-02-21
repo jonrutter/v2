@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import Link from 'next/link';
 import { Logo } from '@/components/Logo';
 import { socialLinks } from '@/data/socialLinks';
 import { navLinks } from '@/data/navLinks';
@@ -48,7 +48,7 @@ export const Header = () => {
                   {navLinks.map(({ label, url }) => (
                     <li key={label}>
                       <Link
-                        to={url}
+                        href={url}
                         className="p-1 hover:text-grey-800 focus:text-grey-800 dark:hover:text-white dark:focus:text-white transition-colors"
                       >
                         {label}
