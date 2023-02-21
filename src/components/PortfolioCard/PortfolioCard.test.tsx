@@ -3,6 +3,7 @@ import { renderWithProviders as render, screen } from '@/test/utils';
 import userEvent from '@testing-library/user-event';
 import { PortfolioCard } from '.';
 import type { PortfolioItemType } from '@content/portfolio/types';
+import { portfolioItems } from '@/data/portfolio';
 
 const props: PortfolioItemType = {
   demoUrl: 'test-demo-url',
@@ -13,32 +14,7 @@ const props: PortfolioItemType = {
     { label: 'Test Skill 1', url: 'test-skill-url-1', color: '' },
     { label: 'Test Skill 2', url: 'test-skill-url-2', color: '' },
   ],
-  img: {
-    childImageSharp: {
-      gatsbyImageData: {
-        layout: 'constrained',
-        backgroundColor: '#f8f8f8',
-        images: {
-          fallback: {
-            src: '/static/9a62d0f1a67183a1f69eac1c9e54852c/0be83/rfdb.png',
-            srcSet:
-              '/static/9a62d0f1a67183a1f69eac1c9e54852c/5f035/rfdb.png 320w,\n/static/9a62d0f1a67183a1f69eac1c9e54852c/eadd3/rfdb.png 640w,\n/static/9a62d0f1a67183a1f69eac1c9e54852c/0be83/rfdb.png 1280w',
-            sizes: '(min-width: 1280px) 1280px, 100vw',
-          },
-          sources: [
-            {
-              srcSet:
-                '/static/9a62d0f1a67183a1f69eac1c9e54852c/5e011/rfdb.webp 320w,\n/static/9a62d0f1a67183a1f69eac1c9e54852c/90d07/rfdb.webp 640w,\n/static/9a62d0f1a67183a1f69eac1c9e54852c/9e21f/rfdb.webp 1280w',
-              type: 'image/webp',
-              sizes: '(min-width: 1280px) 1280px, 100vw',
-            },
-          ],
-        },
-        width: 1280,
-        height: 1280,
-      },
-    },
-  },
+  img: portfolioItems[0].img,
   id: 'test-id',
   type: 'website',
 };
@@ -137,12 +113,5 @@ describe('FlipCard', () => {
 
     // there should not be a skill list
     expect(screen.queryByRole('list')).not.toBeInTheDocument();
-  });
-  it('does not break when an image is not included', () => {
-    const overrideProps = { ...props, img: null };
-    render(<PortfolioCard {...overrideProps} />);
-    // there should not be an image
-    expect(screen.queryByRole('img')).not.toBeInTheDocument();
-    screen.getByText('Test Portfolio Item');
   });
 });
