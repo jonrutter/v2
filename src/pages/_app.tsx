@@ -5,9 +5,16 @@ import { ColorModeProvider } from '@/context/ColorMode';
 import { LazyMotion, domAnimation } from 'framer-motion';
 
 // generate self-hosted fonts
-const openSans = Open_Sans({ subsets: ['latin'] });
-const playfairDisplay = Playfair_Display({ subsets: ['latin'] });
-const seaweedScript = Seaweed_Script({ weight: '400', subsets: ['latin'] });
+const openSans = Open_Sans({ subsets: ['latin'], display: 'swap' });
+const playfairDisplay = Playfair_Display({
+  subsets: ['latin'],
+  display: 'swap',
+});
+const seaweedScript = Seaweed_Script({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
