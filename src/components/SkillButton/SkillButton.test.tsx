@@ -1,5 +1,5 @@
 import React from 'react';
-import { screen, render } from '@test/utils';
+import { screen, render } from '@/test/utils';
 import { NextJS, React as ReactSkill } from '@content/portfolio/skills';
 import { SkillButton } from '.';
 

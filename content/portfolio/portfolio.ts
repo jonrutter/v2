@@ -1,4 +1,4 @@
-import type { PortfolioItemPrebuildType } from './types';
+import type { PortfolioItemType } from './types';
 
 import {
   React,
@@ -14,7 +14,22 @@ import {
   StyledComponents,
 } from './skills';
 
-export const portfolioItems: PortfolioItemPrebuildType[] = [
+// images
+import RFDBImage from './images/rfdb.png';
+import TasklistImage from './images/tasklist.png';
+import BringingGloryImage from './images/bringingglory.png';
+import BlogrImage from './images/blogr.png';
+import FyloImage from './images/fylo.png';
+import ManageImage from './images/manage.png';
+import QuizImage from './images/quiz.png';
+import GroceryImage from './images/grocery.png';
+import ShortlyImage from './images/shortly.png';
+import InsureImage from './images/insure.png';
+import HuddleImage from './images/huddle.png';
+import SplitterImage from './images/splitter.png';
+import MarkdownImage from './images/markdown.png';
+
+export const portfolioItems: PortfolioItemType[] = [
   {
     title: 'React Film Database',
     description:
@@ -23,7 +38,8 @@ export const portfolioItems: PortfolioItemPrebuildType[] = [
     codeUrl: 'https://github.com/jonrutter/react-film-database',
     type: 'app',
     skills: [NextJS, React, Tailwind, TypeScript],
-    img: 'images/rfdb.png',
+    img: RFDBImage,
+    id: 'react-film-database',
   },
   {
     title: 'TaskList',
@@ -33,7 +49,8 @@ export const portfolioItems: PortfolioItemPrebuildType[] = [
     codeUrl: 'https://github.com/jonrutter/tasklist',
     type: 'app',
     skills: [React, TypeScript, MaterialUI],
-    img: 'images/tasklist.png',
+    img: TasklistImage,
+    id: 'tasklist-app',
   },
   {
     title: 'Bringing Glory',
@@ -43,7 +60,8 @@ export const portfolioItems: PortfolioItemPrebuildType[] = [
     codeUrl: '',
     type: 'website',
     skills: [Gatsby, JavaScript, React, StyledComponents],
-    img: './images/bringingglory.png',
+    img: BringingGloryImage,
+    id: 'bringing-glory',
   },
   {
     title: 'Blogr Landing Page',
@@ -53,7 +71,8 @@ export const portfolioItems: PortfolioItemPrebuildType[] = [
     codeUrl: 'https://github.com/jonrutter/blogr-demo',
     type: 'website',
     skills: [Gatsby, JavaScript, React, Tailwind],
-    img: './images/blogr.png',
+    img: BlogrImage,
+    id: 'blogr-landing-page',
   },
   {
     title: 'Fylo Landing Page',
@@ -63,7 +82,8 @@ export const portfolioItems: PortfolioItemPrebuildType[] = [
     codeUrl: 'https://github.com/rutterjt-archive/front-end-projects',
     type: 'website',
     skills: [HTML, JavaScript, Sass],
-    img: './images/fylo.png',
+    img: FyloImage,
+    id: 'fylo-landing-page',
   },
   {
     title: 'Manage Landing Page',
@@ -73,7 +93,8 @@ export const portfolioItems: PortfolioItemPrebuildType[] = [
     codeUrl: 'https://github.com/jonrutter/manage-demo',
     type: 'website',
     skills: [CSS, JavaScript, React],
-    img: './images/manage.png',
+    img: ManageImage,
+    id: 'manage-landing-page',
   },
   {
     title: 'React Quiz',
@@ -83,7 +104,8 @@ export const portfolioItems: PortfolioItemPrebuildType[] = [
     codeUrl: 'https://github.com/jonrutter/ts-quiz',
     type: 'app',
     skills: [React, Tailwind, TypeScript],
-    img: './images/quiz.png',
+    img: QuizImage,
+    id: 'react-quiz-app',
   },
   {
     title: 'Grocery List',
@@ -93,7 +115,8 @@ export const portfolioItems: PortfolioItemPrebuildType[] = [
     codeUrl: 'https://github.com/jonrutter/grocery-list',
     type: 'app',
     skills: [React, Tailwind, TypeScript],
-    img: './images/grocery.png',
+    img: GroceryImage,
+    id: 'grocery-list',
   },
   {
     title: 'Shortly Landing Page',
@@ -103,7 +126,8 @@ export const portfolioItems: PortfolioItemPrebuildType[] = [
     codeUrl: 'https://github.com/jonrutter/shortly-demo',
     type: 'website',
     skills: [CSS, JavaScript, React],
-    img: './images/shortly.png',
+    img: ShortlyImage,
+    id: 'shortly-landing-page',
   },
   {
     title: 'Insure Landing Page',
@@ -112,7 +136,8 @@ export const portfolioItems: PortfolioItemPrebuildType[] = [
     codeUrl: 'https://github.com/rutterjt-archive/front-end-projects',
     type: 'website',
     skills: [HTML, JavaScript, Sass],
-    img: './images/insure.png',
+    img: InsureImage,
+    id: 'insure-landing-page',
   },
   {
     title: 'Huddle Landing Page',
@@ -121,7 +146,8 @@ export const portfolioItems: PortfolioItemPrebuildType[] = [
     codeUrl: 'https://github.com/jonrutter/huddle-demo',
     type: 'website',
     skills: [Gatsby, JavaScript, React, Tailwind],
-    img: './images/huddle.png',
+    img: HuddleImage,
+    id: 'huddle-landing-page',
   },
   {
     title: 'Splitter Tip Calculator',
@@ -131,7 +157,8 @@ export const portfolioItems: PortfolioItemPrebuildType[] = [
     codeUrl: 'https://github.com/jonrutter/tip-calculator-app',
     type: 'app',
     skills: [CSS, JavaScript, React],
-    img: './images/splitter.png',
+    img: SplitterImage,
+    id: 'splitter-tip-calculator',
   },
   {
     title: 'Markdown Previewer',
@@ -141,8 +168,7 @@ export const portfolioItems: PortfolioItemPrebuildType[] = [
     codeUrl: 'https://github.com/jonrutter/markdown-previewer-app',
     type: 'app',
     skills: [CSS, JavaScript, React],
-    img: './images/markdown.png',
+    img: MarkdownImage,
+    id: 'markdown-previewer',
   },
 ];
-
-export const portfolioItemsJson = JSON.stringify(portfolioItems);

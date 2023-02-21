@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Dialog } from '@headlessui/react';
-import { GatsbyImage } from 'gatsby-plugin-image';
+import Image from 'next/image';
 import type { PortfolioItemType } from '@content/portfolio/types';
 import {
   XMarkIcon,
@@ -36,14 +36,7 @@ export const PortfolioCard: React.FC<PortfolioItemType> = ({
           aria-label={`show details for project ${title}`}
           className="shadow-md hover:opacity-80 transition-opacity"
         >
-          {img === null ? (
-            title
-          ) : (
-            <GatsbyImage
-              image={img.childImageSharp.gatsbyImageData}
-              alt={title}
-            />
-          )}
+          {img === null ? title : <Image alt={title} src={img} />}
         </button>
       </div>
       <AnimatePresence>
@@ -60,7 +53,7 @@ export const PortfolioCard: React.FC<PortfolioItemType> = ({
               initial="closed"
               animate="open"
               exit="exit"
-              className="-z-10 fixed inset-0 bg-grey-800/20 backdrop-blur-sm"
+              className="-z-10 fixed inset-0 bg-grey-800/70"
             />
             {/* content wrappers */}
             <div className="fixed inset-0 overflow-y-auto">
@@ -78,17 +71,6 @@ export const PortfolioCard: React.FC<PortfolioItemType> = ({
                   animate="open"
                   exit="exit"
                 >
-                  {/* {img === null ? null : (
-                    <div className="absolute inset-0">
-                      <GatsbyImage
-                        image={img.childImageSharp.gatsbyImageData}
-                        alt={title}
-                        className="absolute inset-0 -z-10 select-none pointer-events-none"
-                      />
-                      <div className="absolute inset-0 bg-white/90 dark:bg-grey-800/90 backdrop-blur-sm z-0" />
-                    </div>
-                  )} */}
-
                   <div className="relative z-0">
                     <button aria-label="close details" onClick={closeDetails}>
                       <XMarkIcon aria-hidden className="w-6 h-6" />

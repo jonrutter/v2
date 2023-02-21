@@ -1,14 +1,15 @@
 import React from 'react';
-import { screen, renderWithProviders as render } from '@test/utils';
+import { screen, renderWithProviders as render } from '@/test/utils';
 import userEvent from '@testing-library/user-event';
 
 import { Button } from '.';
+import Link from 'next/link';
 
 const mockClickHandler = jest.fn();
 
 const AsButton = (
   <div data-testid="wrapper">
-    <Button as="button" type="submit" id="test-id" onClick={mockClickHandler}>
+    <Button type="submit" id="test-id" onClick={mockClickHandler}>
       Test Button
     </Button>
   </div>
@@ -16,21 +17,15 @@ const AsButton = (
 
 const AsLink = (
   <div data-testid="wrapper">
-    <Button to="/">Test Link</Button>
+    <Button as={Link} href="/">
+      Test Link
+    </Button>
   </div>
 );
 
-const AsPrimary = (
-  <Button as="button" variant="primary">
-    Primary
-  </Button>
-);
+const AsPrimary = <Button variant="primary">Primary</Button>;
 
-const AsSecondary = (
-  <Button as="button" variant="secondary">
-    Secondary
-  </Button>
-);
+const AsSecondary = <Button variant="secondary">Secondary</Button>;
 
 describe('Button', () => {
   it('renders correctly as a button', async () => {
@@ -49,7 +44,7 @@ describe('Button', () => {
     await userEvent.click(button);
     expect(mockClickHandler).toBeCalledTimes(1);
   });
-  it('renders correctly as a GatsbyLink', () => {
+  it('renders correctly as a Next Link', () => {
     render(AsLink);
     // an html link should be rendered
     expect(screen.getByTestId('wrapper')).toContainHTML('<a ');

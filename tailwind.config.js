@@ -3,11 +3,7 @@ const colors = require('tailwindcss/colors');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    './src/pages/**/*.{js,jsx,ts,tsx}',
-    './src/components/**/*.{js,jsx,ts,tsx}',
-    './src/scenes/**/*.{js,jsx,ts,tsx}',
-  ],
+  content: ['./src/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class',
   theme: {
     colors: {
@@ -54,9 +50,15 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ['"Open Sans"', ...defaultTheme.fontFamily.sans],
-        serif: ['"Playfair Display"', ...defaultTheme.fontFamily.serif],
-        cursive: ['"Seaweed Script"'],
+        sans: ['var(--font-family-open-sans)', ...defaultTheme.fontFamily.sans],
+        serif: [
+          'var(--font-family-playfair-display)',
+          ...defaultTheme.fontFamily.serif,
+        ],
+        cursive: [
+          'var(--font-family-seaweed-script)',
+          ...defaultTheme.fontFamily.sans,
+        ],
       },
     },
   },

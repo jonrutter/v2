@@ -61,7 +61,7 @@ export const Form: React.FC<Props> = ({ onSubmit, sent, loading, error }) => {
             <Spinner label="Sending" />
           </div>
         ) : (
-          <Button variant="primary" as="button" type="submit">
+          <Button variant="primary" type="submit">
             Send message
           </Button>
         )}

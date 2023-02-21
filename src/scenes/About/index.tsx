@@ -1,12 +1,13 @@
 import React from 'react';
 import { skills } from '@/data/skills';
 import { ImageBorders } from '@/components/ImageBorders';
-import { StaticImage } from 'gatsby-plugin-image';
 import { m } from 'framer-motion';
 import { useAnimations } from './useAnimations';
 import { SkillButton } from '@/components/SkillButton';
+import Image from 'next/image';
+import ProfileImage from '@/assets/images/profile.png';
 
-const Link: React.FC<{ href: string; children: React.ReactNode }> = ({
+const StyledLink: React.FC<{ href: string; children: React.ReactNode }> = ({
   href,
   children,
 }) => (
@@ -14,7 +15,7 @@ const Link: React.FC<{ href: string; children: React.ReactNode }> = ({
     href={href}
     target="_blank"
     rel="noreferrer"
-    className="hover:text-grey-600 focus:text-grey-600 dark:hover:text-grey-300 dark:focus:text-grey-300 transition-colors underline inline-flex items-baseline"
+    className="hover:text-grey-800 focus:text-grey-800 dark:hover:text-white dark:focus:text-white transition-colors underline inline-flex items-baseline"
   >
     {children}
   </a>
@@ -57,36 +58,36 @@ export const About = () => {
                 </p>
                 <p className="mb-4">
                   I'm also passionate about{' '}
-                  <Link href="https://en.wikipedia.org/wiki/Free_and_open-source_software">
+                  <StyledLink href="https://en.wikipedia.org/wiki/Free_and_open-source_software">
                     free and open-source software
-                  </Link>
+                  </StyledLink>
                   . I enjoy contributing to open-source projects like{' '}
-                  <Link href="https://github.com/gatsbyjs/gatsby/pulls?q=is%3Apr+is%3Amerged+author%3Ajonrutter">
+                  <StyledLink href="https://github.com/gatsbyjs/gatsby/pulls?q=is%3Apr+is%3Amerged+author%3Ajonrutter">
                     <img
                       src="https://avatars.githubusercontent.com/u/12551863?s=50&v=4"
                       alt=""
                       className="h-5 w-5 mr-1"
                     />
                     <span>Gatsby</span>
-                  </Link>
+                  </StyledLink>
                   ,{' '}
-                  <Link href="https://github.com/WordPress/openverse-frontend/pulls?q=is%3Apr+author%3Ajonrutter">
+                  <StyledLink href="https://github.com/WordPress/openverse-frontend/pulls?q=is%3Apr+author%3Ajonrutter">
                     <img
                       src="https://avatars.githubusercontent.com/u/276006?s=50&v=4"
                       alt=""
                       className="h-5 w-5 mr-1"
                     />
                     <span>WordPress</span>
-                  </Link>
+                  </StyledLink>
                   , and{' '}
-                  <Link href="https://github.com/freeCodeCamp/freeCodeCamp/pulls?q=is%3Apr+is%3Amerged+author%3Ajonrutter">
+                  <StyledLink href="https://github.com/freeCodeCamp/freeCodeCamp/pulls?q=is%3Apr+is%3Amerged+author%3Ajonrutter">
                     <img
                       src="https://avatars.githubusercontent.com/u/9892522?s=50&v=4"
                       alt=""
                       className="h-5 w-5 mr-1"
                     />
                     <span>freeCodeCamp</span>
-                  </Link>
+                  </StyledLink>
                   .
                 </p>
               </div>
@@ -124,13 +125,13 @@ export const About = () => {
         {/* right / bottom box - image */}
         <div className="flex items-center justify-center lg:justify-end">
           <ImageBorders>
-            <StaticImage
-              src={'../../assets/images/profile.png'}
+            <Image
+              src={ProfileImage}
               alt="profile picture of Jon Rutter"
-              width={400}
-              placeholder="blurred"
+              placeholder="blur"
               quality={100}
-              className="hover:filter hover:saturate-[1.2] transition-all"
+              sizes="(min-width: 0px) 400px, 400px"
+              className="hover:filter hover:saturate-[1.2] transition-all max-w-[400px] w-full"
               data-testid="profile-picture"
             />
           </ImageBorders>
