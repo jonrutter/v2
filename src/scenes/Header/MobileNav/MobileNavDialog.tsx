@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import Link from 'next/link';
 import { AnimatePresence, m } from 'framer-motion';
 import { Dialog } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/solid';
@@ -31,7 +31,7 @@ export const MobileNavDialog: React.FC<Props> = ({ open, onClose }) => {
             initial="closed"
             animate="open"
             exit="exit"
-            className="fixed inset-0 bg-grey-800/20 backdrop-blur-sm z-0"
+            className="fixed inset-0 bg-grey-800/70 z-0"
             aria-hidden
           />
           <m.nav
@@ -61,7 +61,7 @@ export const MobileNavDialog: React.FC<Props> = ({ open, onClose }) => {
               <ul className="flex flex-col space-y-6 px-8 text-lg font-semibold">
                 {navLinks.map(({ label, url }) => (
                   <m.li variants={slideIn} key={label}>
-                    <Link to={url} onClick={onClose}>
+                    <Link href={url} onClick={onClose}>
                       {label}
                     </Link>
                   </m.li>
