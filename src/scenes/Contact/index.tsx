@@ -1,7 +1,8 @@
 import React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
 import { ContactForm } from './ContactForm';
 import { ImageBorders } from '@/components/ImageBorders';
+import Image from 'next/image';
+import ContactImage from '@/assets/images/contact.jpg';
 
 export const Contact = () => {
   return (
@@ -35,9 +36,10 @@ export const Contact = () => {
           {/* image */}
           <div className="lg:[grid-area:_image] lg:translate-y-7">
             <ImageBorders>
-              <StaticImage
-                src="../../assets/images/contact.jpg"
+              <Image
+                src={ContactImage}
                 alt=""
+                placeholder="blur"
                 quality={100}
                 width={600}
                 className="hover:filter hover:saturate-[1.3] transition-all"
