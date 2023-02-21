@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import type { PageProps } from 'gatsby';
 import { m, AnimatePresence } from 'framer-motion';
 import { useAnimations } from './useAnimations';
 
@@ -85,17 +84,17 @@ export const AnimatedLogo: React.FC<AnimationProps> = ({
 };
 
 type Props = {
-  location: PageProps['location'];
+  locationPathname: string;
   children: React.ReactNode;
 };
 
 /**
  * Wraps all page elements. Intercepts requests to '/', displaying a loading animation on the initial page load.
  */
-export const PageLoader: React.FC<Props> = ({ location, children }) => {
+export const PageLoader: React.FC<Props> = ({ locationPathname, children }) => {
   const initialRef = useRef(true);
   const [loading, setLoading] = useState<boolean>(
-    location.pathname === '/' || initialRef.current
+    locationPathname === '/' || initialRef.current
   );
   const [hasLoaded, setHasLoaded] = useState<boolean>(false);
 
@@ -106,10 +105,10 @@ export const PageLoader: React.FC<Props> = ({ location, children }) => {
 
   useEffect(() => {
     initialRef.current = false;
-    if (location.pathname === '/' && !hasLoaded) {
+    if (locationPathname === '/' && !hasLoaded) {
       setLoading(true);
     }
-  }, [location.pathname, hasLoaded]);
+  }, [locationPathname, hasLoaded]);
 
   return (
     <>
