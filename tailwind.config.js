@@ -50,9 +50,15 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ['"Open Sans"', ...defaultTheme.fontFamily.sans],
-        serif: ['"Playfair Display"', ...defaultTheme.fontFamily.serif],
-        cursive: ['"Seaweed Script"'],
+        sans: ['var(--font-family-open-sans)', ...defaultTheme.fontFamily.sans],
+        serif: [
+          'var(--font-family-playfair-display)',
+          ...defaultTheme.fontFamily.serif,
+        ],
+        cursive: [
+          'var(--font-family-seaweed-script)',
+          ...defaultTheme.fontFamily.sans,
+        ],
       },
     },
   },
