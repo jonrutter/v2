@@ -24,12 +24,12 @@ export const Landing = () => {
         </div>
         <div className="flex flex-col space-y-6 md:flex-row md:space-y-0 md:space-x-8">
           <div className="grid grid-cols-1">
-            <Button as={Link} href="/#contact" variant="primary">
+            <Button as={Link} href="/contact" variant="primary">
               Contact me
             </Button>
           </div>
           <div className="grid grid-cols-1">
-            <Button as={Link} href="/#portfolio" variant="secondary">
+            <Button as={Link} href="/portfolio" variant="secondary">
               My portfolio
             </Button>
           </div>
