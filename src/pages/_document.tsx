@@ -1,9 +1,14 @@
 import { Html, Head, Main, NextScript } from 'next/document';
+import Script from 'next/script';
 
 export default function Document() {
   return (
     <Html lang="en" className="dark" data-theme="dark">
       <Head>
+        <Script id="handle-number-of-visits" strategy="beforeInteractive">
+          {`try{let e=localStorage.getItem("numberOfVisits"),t;t=null===e||Number.isNaN(parseInt(e))?1:parseInt(e)+1,localStorage.setItem("numberOfVisits",t),document.documentElement.dataset.visits=t}catch{console.warn("There was an error fetching the number of site visits. This may cause the loader animation to run unnecessarily.")}`}
+        </Script>
+
         <link rel="icon" href="/favicon.ico" />
         <link
           rel="apple-touch-icon"
