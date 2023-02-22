@@ -123,14 +123,14 @@ export const About = () => {
           </div>
         </section>
         {/* right / bottom box - image */}
-        <div className="flex items-center justify-center lg:justify-end">
+        <div className="flex items-center justify-center lg:justify-end h-full">
           <ImageBorders>
             <Image
               src={ProfileImage}
               alt="profile picture of Jon Rutter"
               placeholder="blur"
               quality={100}
-              sizes="(min-width: 0px) 400px, 400px"
+              sizes="400px"
               className="hover:filter hover:saturate-[1.2] transition-all max-w-[400px] w-full"
               data-testid="profile-picture"
             />
