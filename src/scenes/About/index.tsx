@@ -25,16 +25,16 @@ const StyledLink: React.FC<{ href: string; children: React.ReactNode }> = ({
 export const About = () => {
   const { skillContainer, popUp } = useAnimations();
   return (
-    <div className="w-full h-full min-h-[calc(100vh-5rem)] py-20 md:py-36">
+    <div className="w-full h-full min-h-[calc(100vh-5rem)] py-20 md:py-28">
       <div className="w-full max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 lg:justify-between lg:contents-between">
         {/* left / top box - text content */}
         <section className="flex justify-center lg:justify-start">
           <div className="w-full max-w-xl">
             {/* heading */}
             <div className="mb-6 w-auto max-w-fit">
-              <h2 className="text-4xl font-semibold font-serif md:text-5xl mb-4 inline-block text-grey-800 dark:text-white transition-colors">
+              <h1 className="text-4xl font-semibold font-serif md:text-5xl mb-4 inline-block text-grey-800 dark:text-white transition-colors">
                 About me
-              </h2>
+              </h1>
               {/* rainbow gradient underline */}
               <div
                 className="h-[2px] bg-gradient-to-r from-neon-400 to-pink-400 w-2/3"
@@ -94,9 +94,9 @@ export const About = () => {
             </div>
             {/* skills */}
             <section className="mb-8">
-              <h3 className="text-2xl font-semibold font-serif mb-4 text-grey-800 dark:text-white transition-colors">
+              <h2 className="text-2xl font-semibold font-serif mb-4 text-grey-800 dark:text-white transition-colors">
                 My skills
-              </h3>
+              </h2>
               <div>
                 <p className="mb-4 text-lg">
                   Some technologies that I frequently work with include:
