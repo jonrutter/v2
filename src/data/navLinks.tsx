@@ -12,7 +12,7 @@ export const links = {
 
 export const navLinks: NavLink[] = [
   { label: 'Home', url: '/' },
-  { label: 'About', url: '/#about' },
-  { label: 'Portfolio', url: '/#portfolio' },
-  { label: 'Contact', url: '/#contact' },
+  { label: 'About', url: '/about' },
+  { label: 'Portfolio', url: '/portfolio' },
+  { label: 'Contact', url: '/contact' },
 ];
