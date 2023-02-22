@@ -26,7 +26,7 @@ export const useAnimations = (): {
         delay: 0.2,
         duration: 0.9,
         type: 'keyframes',
-        ease: 'easeInOut',
+        ease: 'linear',
       },
     },
   };
