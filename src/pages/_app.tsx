@@ -4,6 +4,7 @@ import { Open_Sans, Playfair_Display, Seaweed_Script } from '@next/font/google';
 import { ColorModeProvider } from '@/context/ColorMode';
 import { LazyMotion, domAnimation } from 'framer-motion';
 // import { PageLoader } from '@/components/PageLoader';
+import { Layout } from '@/components/Layout';
 
 // generate self-hosted fonts
 const openSans = Open_Sans({ subsets: ['latin'], display: 'swap' });
@@ -29,7 +30,9 @@ export default function App({ Component, pageProps }: AppProps) {
       `}</style>
       <LazyMotion features={domAnimation}>
         <ColorModeProvider>
-          <Component {...pageProps} />
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
         </ColorModeProvider>
       </LazyMotion>
     </>
