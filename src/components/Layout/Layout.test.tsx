@@ -4,7 +4,9 @@ import { Layout } from '.';
 
 const Component = (
   <Layout>
-    <h1>Test Heading</h1>
+    <main id="main">
+      <h1>Test Heading</h1>
+    </main>
   </Layout>
 );
 
