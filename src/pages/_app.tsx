@@ -3,8 +3,8 @@ import type { AppProps } from 'next/app';
 import { Open_Sans, Playfair_Display, Seaweed_Script } from '@next/font/google';
 import { ColorModeProvider } from '@/context/ColorMode';
 import { LazyMotion, domAnimation } from 'framer-motion';
-// import { PageLoader } from '@/components/PageLoader';
 import { Layout } from '@/components/Layout';
+import { AnimatePresence } from 'framer-motion';
 
 // generate self-hosted fonts
 const openSans = Open_Sans({ subsets: ['latin'], display: 'swap' });
@@ -18,7 +18,8 @@ const seaweedScript = Seaweed_Script({
   display: 'swap',
 });
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps, router }: AppProps) {
+  const { route } = router;
   return (
     <>
       <style jsx global>{`
@@ -31,7 +32,9 @@ export default function App({ Component, pageProps }: AppProps) {
       <LazyMotion features={domAnimation}>
         <ColorModeProvider>
           <Layout>
-            <Component {...pageProps} />
+            <AnimatePresence mode="wait">
+              <Component {...pageProps} key={route} />
+            </AnimatePresence>
           </Layout>
         </ColorModeProvider>
       </LazyMotion>
