@@ -1,16 +1,10 @@
-import Head from 'next/head';
 import { PageTransition } from '@/components/PageTransition';
 import { About } from '@/scenes/About';
+import { Seo } from '@/components/Seo';
 
 const AboutPage = () => (
   <PageTransition>
-    <Head>
-      <title>About Me | Jon Rutter</title>
-      <meta
-        name="description"
-        content="Jon Rutter is a front-end engineer specializing in creating accessible, responsive, and performant websites and web applications with React."
-      />
-    </Head>
+    <Seo title="About Me | Jon Rutter" />
     <About />
   </PageTransition>
 );

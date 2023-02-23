@@ -1,15 +1,13 @@
 import React from 'react';
-import Head from 'next/head';
 import Link from 'next/link';
 import { PageTransition } from '@/components/PageTransition';
 import { Button } from '@/components/Button';
+import { Seo } from '@/components/Seo';
 
 export default function NotFoundPage() {
   return (
     <PageTransition>
-      <Head>
-        <title>Not Found</title>
-      </Head>
+      <Seo title="Not Found" />
       <div className="w-full min-h-content py-20 md:py-36">
         <div className="w-full max-w-[500px] mx-auto">
           <h1 className="flex flex-col mb-6 md:mb-8">

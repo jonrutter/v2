@@ -1,16 +1,10 @@
-import Head from 'next/head';
 import { PageTransition } from '@/components/PageTransition';
 import { Landing } from '@/scenes/Landing';
+import { Seo } from '@/components/Seo';
 
 const HomePage = () => (
   <PageTransition>
-    <Head>
-      <title>Jon Rutter | Web Developer</title>
-      <meta
-        name="description"
-        content="Jon Rutter is a front-end engineer specializing in creating accessible, responsive, and performant websites and web applications with React."
-      />
-    </Head>
+    <Seo title="Jon Rutter | Web Developer" />
     <Landing />
   </PageTransition>
 );
