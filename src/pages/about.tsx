@@ -1,8 +1,9 @@
 import Head from 'next/head';
+import { PageTransition } from '@/components/PageTransition';
 import { About } from '@/scenes/About';
 
 const AboutPage = () => (
-  <>
+  <PageTransition>
     <Head>
       <title>About Me | Jon Rutter</title>
       <meta
@@ -11,7 +12,7 @@ const AboutPage = () => (
       />
     </Head>
     <About />
-  </>
+  </PageTransition>
 );
 
 export default AboutPage;

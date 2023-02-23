@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { PageTransition } from '@/components/PageTransition';
 import { Portfolio } from '@/scenes/Portfolio';
 import { portfolioItems as pI } from '@/data/portfolio';
 import type { PortfolioItemType } from '@content/portfolio/types';
@@ -8,7 +9,7 @@ const PortfolioPage = ({
   portfolioItems,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
-    <>
+    <PageTransition>
       <Head>
         <title>My Portfolio | Jon Rutter</title>
         <meta
@@ -17,7 +18,7 @@ const PortfolioPage = ({
         />
       </Head>
       <Portfolio list={portfolioItems} />
-    </>
+    </PageTransition>
   );
 };
 

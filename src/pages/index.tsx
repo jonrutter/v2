@@ -1,8 +1,9 @@
 import Head from 'next/head';
+import { PageTransition } from '@/components/PageTransition';
 import { Landing } from '@/scenes/Landing';
 
 const HomePage = () => (
-  <>
+  <PageTransition>
     <Head>
       <title>Jon Rutter | Web Developer</title>
       <meta
@@ -11,7 +12,7 @@ const HomePage = () => (
       />
     </Head>
     <Landing />
-  </>
+  </PageTransition>
 );
 
 export default HomePage;
