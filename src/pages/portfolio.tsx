@@ -10,7 +10,7 @@ const PortfolioPage = ({
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <PageTransition>
-      <Seo title="My Portfolio | Jon Rutter" />
+      <Seo title="My Portfolio | Jon Rutter" pathname="/portfolio" />
       <Portfolio list={portfolioItems} />
     </PageTransition>
   );

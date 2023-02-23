@@ -4,7 +4,7 @@ import { Seo } from '@/components/Seo';
 
 const ContactPage = () => (
   <PageTransition>
-    <Seo title="Contact Me | Jon Rutter" />
+    <Seo title="Contact Me | Jon Rutter" pathname="/contact" />
     <Contact />
   </PageTransition>
 );

@@ -4,7 +4,7 @@ import { Seo } from '@/components/Seo';
 
 const HomePage = () => (
   <PageTransition>
-    <Seo title="Jon Rutter | Web Developer" />
+    <Seo title="Jon Rutter | Web Developer" pathname="/" />
     <Landing />
   </PageTransition>
 );

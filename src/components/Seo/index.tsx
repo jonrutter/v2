@@ -41,7 +41,7 @@ export const Seo: React.FC<Props> = ({
     twitterUsername,
     keywords,
     article,
-    pathname,
+    pathname: pathname ? `https://www.jonrutter.io${pathname}` : null,
   };
 
   return (
