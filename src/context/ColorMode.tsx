@@ -3,13 +3,21 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 export type ColorMode = 'light' | 'dark';
 
 type ColorModeContextType = {
-  mode: ColorMode;
+  mode?: ColorMode;
   toggleMode: (_?: ColorMode) => void;
 };
 
 const defaultContext: ColorModeContextType = {
-  mode: 'dark',
+  mode: undefined,
   toggleMode: () => null,
+};
+
+const persistMode = (mode: ColorMode) => {
+  try {
+    localStorage.setItem('theme', mode);
+  } catch {
+    console.warn('There was a problem persisting the color mode.');
+  }
 };
 
 const ColorModeContext = createContext(defaultContext);
@@ -17,16 +25,33 @@ const ColorModeContext = createContext(defaultContext);
 export const ColorModeProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [mode, setMode] = useState<ColorMode>('dark');
+  const [initial, setInitial] = useState(true);
+  const [mode, setMode] = useState<ColorMode | undefined>(undefined);
 
-  /** Toggles the current color mode, or else sets it to the passed value. */
+  /** Toggles the current color mode, or else sets it to the passed value, and persists to localStorage. */
   const toggleMode = (newMode?: ColorMode) => {
     if (newMode) {
+      persistMode(newMode);
       setMode(newMode);
     } else {
-      setMode((prev: ColorMode) => (prev === 'light' ? 'dark' : 'light'));
+      setMode((prev?: ColorMode) => {
+        const newMode = prev === 'light' ? 'dark' : 'light';
+        persistMode(newMode);
+        return newMode;
+      });
     }
   };
+
+  // update color mode on first render in client
+  useEffect(() => {
+    if (initial) {
+      setInitial(false);
+    } else {
+      const d = window.document.documentElement;
+      const p = d.dataset.theme;
+      setMode(p === 'light' ? 'light' : 'dark');
+    }
+  }, [initial]);
 
   // update `<html>`'s class when state changes
   useEffect(() => {
@@ -48,7 +73,7 @@ export const ColorModeProvider: React.FC<{ children: React.ReactNode }> = ({
 
 /** Consumes ColorMode context. */
 export const useColorMode = (): {
-  mode: 'light' | 'dark';
+  mode?: 'light' | 'dark';
   toggleMode: (newMode?: 'light' | 'dark') => void;
 } => {
   return useContext(ColorModeContext);

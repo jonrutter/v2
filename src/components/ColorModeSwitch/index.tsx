@@ -15,10 +15,16 @@ export const ColorModeSwitch = () => {
       className="text-grey-800 dark:text-grey-300 hover:text-grey-800 focus:text-grey-800 dark:hover:text-white dark:focus:text-white transition-colors p-2"
       data-mode={mode}
     >
-      {mode === 'light' ? (
-        <SunIcon className="h-5 w-5" />
+      {mode ? (
+        <>
+          {mode === 'light' ? (
+            <SunIcon className="h-5 w-5" />
+          ) : (
+            <MoonIcon className="h-5 w-5" />
+          )}
+        </>
       ) : (
-        <MoonIcon className="h-5 w-5" />
+        <span className="block h-5 w-5"></span>
       )}
     </button>
   );
