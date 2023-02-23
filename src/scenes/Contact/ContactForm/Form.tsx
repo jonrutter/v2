@@ -22,12 +22,12 @@ export const Form: React.FC<Props> = ({ onSubmit, sent, loading, error }) => {
   if (sent) {
     return (
       <m.div variants={container} initial="hidden" animate="visible">
-        <m.h3
+        <m.h2
           variants={fadeUp}
           className="font-serif font-semibold text-2xl mb-4 text-grey-800 dark:text-white transition-colors"
         >
           Message sent
-        </m.h3>
+        </m.h2>
         <m.div variants={fadeUp}>
           <p className="text-lg">
             Thanks for your message! I'll try to get back to you as soon as I

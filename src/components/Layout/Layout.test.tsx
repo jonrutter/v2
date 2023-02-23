@@ -4,11 +4,13 @@ import { Layout } from '.';
 
 const Component = (
   <Layout>
-    <h1>Test Heading</h1>
+    <main id="main">
+      <h1>Test Heading</h1>
+    </main>
   </Layout>
 );
 
-describe('Page layout', () => {
+describe('Layout', () => {
   it('renders the correct content', () => {
     const { container } = render(Component);
     // there should be main, header, nav, and footer landmark regions

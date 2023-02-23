@@ -1,37 +1,33 @@
 import React from 'react';
-import Head from 'next/head';
-import { Layout } from '@/components/Layout';
-import { Button } from '@/components/Button';
 import Link from 'next/link';
+import { PageTransition } from '@/components/PageTransition';
+import { Button } from '@/components/Button';
+import { Seo } from '@/components/Seo';
 
 export default function NotFoundPage() {
   return (
-    <>
-      <Head>
-        <title>Not Found</title>
-      </Head>
-      <Layout>
-        <div className="w-full min-h-content py-20 md:py-36">
-          <div className="w-full max-w-[500px] mx-auto">
-            <h1 className="flex flex-col mb-6 md:mb-8">
-              <span className="text-xl md:text-2xl font-cursive text-pink-600 dark:text-pink-400 mb-1 md:mb-2 transition-colors">
-                Oops.{' '}
-              </span>
-              <span className="text-4xl md:text-6xl font-semibold font-serif text-grey-800 dark:text-white transition-colors">
-                404
-              </span>
-            </h1>
+    <PageTransition>
+      <Seo title="Not Found" />
+      <div className="w-full min-h-content py-20 md:py-36">
+        <div className="w-full max-w-[500px] mx-auto">
+          <h1 className="flex flex-col mb-6 md:mb-8">
+            <span className="text-xl md:text-2xl font-cursive text-pink-600 dark:text-pink-400 mb-1 md:mb-2 transition-colors">
+              Oops.{' '}
+            </span>
+            <span className="text-4xl md:text-6xl font-semibold font-serif text-grey-800 dark:text-white transition-colors">
+              404
+            </span>
+          </h1>
 
-            <p className="text-lg mb-6 md:mb-8">
-              Sorry! The page you were looking for does not exit. It may have
-              been moved, deleted, or never existed at all. Try going back:
-            </p>
-            <Button as={Link} href="/">
-              Home
-            </Button>
-          </div>
+          <p className="text-lg mb-6 md:mb-8">
+            Sorry! The page you were looking for does not exit. It may have been
+            moved, deleted, or never existed at all. Try going back:
+          </p>
+          <Button as={Link} href="/">
+            Home
+          </Button>
         </div>
-      </Layout>
-    </>
+      </div>
+    </PageTransition>
   );
 }

@@ -6,16 +6,16 @@ import ContactImage from '@/assets/images/contact.jpg';
 
 export const Contact = () => {
   return (
-    <div className="w-full h-full min-h-[calc(100vh-5rem)] py-20 md:py-36">
+    <div className="w-full h-full min-h-[calc(100vh-5rem)] py-20 md:py-28">
       <div className="w-full max-w-screen-xl mx-auto">
         <section className="max-w-xl mx-auto lg:max-w-full contact-section-grid">
           {/* heading */}
           <div className="lg:[grid-area:_header]">
             {/* heading */}
             <div className="max-w-fit mb-6">
-              <h2 className="text-4xl md:text-5xl font-serif font-semibold mb-4 text-grey-800 dark:text-white transition-colors">
+              <h1 className="text-4xl md:text-5xl font-serif font-semibold mb-4 text-grey-800 dark:text-white transition-colors">
                 Contact me
-              </h2>
+              </h1>
               {/* rainbow gradient underline */}
               <div
                 className="h-[2px] bg-gradient-to-r from-neon-400 to-pink-400 w-2/3"

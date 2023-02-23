@@ -12,14 +12,14 @@ export const Portfolio: React.FC<{ list: PortfolioItemType[] }> = ({
   const { container, popUp } = useAnimations();
 
   return (
-    <div className="w-full h-full min-h-[calc(100vh-5rem)] py-20 md:py-36">
+    <div className="w-full h-full min-h-[calc(100vh-5rem)] py-20 md:py-28">
       <div className="w-full max-w-screen-xl mx-auto">
         <section className="max-w-xl lg:max-w-full mx-auto">
           <div className="flex justify-center">
             <div className="mb-6 w-auto max-w-fit text-center">
-              <h2 className="text-4xl font-semibold font-serif md:text-5xl mb-4 inline-block text-grey-800 dark:text-white transition-colors">
+              <h1 className="text-4xl font-semibold font-serif md:text-5xl mb-4 inline-block text-grey-800 dark:text-white transition-colors">
                 My portfolio
-              </h2>
+              </h1>
               {/* rainbow gradient underline */}
               <div
                 className="h-[2px] bg-gradient-to-r from-neon-400 to-pink-400 w-2/3 mx-auto"
