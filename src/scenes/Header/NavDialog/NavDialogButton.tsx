@@ -10,7 +10,6 @@ export const NavDialogButton: React.FC<Props> = ({ onClick }) => (
     onClick={onClick}
     aria-label="open the navigation menu"
   >
-    {/* <Bars3Icon className="h-6 w-6" /> */}
     Menu
   </button>
 );
