@@ -1,5 +1,10 @@
 import React from 'react';
-import { renderWithProviders as render, screen, waitFor } from '@/test/utils';
+import {
+  renderWithProviders as render,
+  screen,
+  waitFor,
+  within,
+} from '@/test/utils';
 import { Header } from '.';
 import { socialLinks } from '@/data/socialLinks';
 import userEvent from '@testing-library/user-event';
@@ -10,13 +15,6 @@ describe('Header', () => {
   });
   it('renders the social links', () => {
     render(<Header />);
-    // there should be four social links, each with a url to the corresponding site
-    socialLinks.forEach((socialLink) => {
-      // a link with the given label should exist in the document
-      const link = screen.getByLabelText(`link to my ${socialLink.label}`);
-      // that link should point to the correct url
-      expect(link).toHaveAttribute('href', socialLink.url);
-    });
   });
   it('renders all of the links correctly', () => {
     render(<Header />);
@@ -44,7 +42,18 @@ describe('Header', () => {
     // after clicking the button, the dialog should appear
     const openButton = screen.getByLabelText('open the navigation menu');
     await userEvent.click(openButton);
-    screen.findByTestId('nav-dialog');
+    const container = await screen.findByTestId('nav-dialog');
+    // the dialog should contain the navigation links
+    // there should be four social links, each with a url to the corresponding site
+    socialLinks.forEach((socialLink) => {
+      // a link with the given label should exist in the document
+      const link = within(container).getByLabelText(
+        `link to my ${socialLink.label}`
+      );
+      // that link should point to the correct url
+      expect(link).toHaveAttribute('href', socialLink.url);
+    });
+
     // the menu should be able to be closed
     const closeButton = screen.getByLabelText('close the menu');
     await userEvent.click(closeButton);

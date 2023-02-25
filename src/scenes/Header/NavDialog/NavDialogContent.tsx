@@ -12,8 +12,8 @@ type Props = {
   onClose: () => void;
 };
 
-/** Renders the slide-in mobile nav dialog. */
-export const MobileNavDialog: React.FC<Props> = ({ open, onClose }) => {
+/** Renders the slide-in navigation dialog. */
+export const NavDialogContent: React.FC<Props> = ({ open, onClose }) => {
   const { container, slideIn, popUp, bgFade } = useAnimations();
 
   return (

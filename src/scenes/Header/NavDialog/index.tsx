@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { MobileNavButton } from './MobileNavButton';
-import { MobileNavDialog } from './MobileNavDialog';
+import { NavDialogButton } from './NavDialogButton';
+import { NavDialogContent } from './NavDialogContent';
 
 /**
  * Renders the mobile navigation dialog.
@@ -9,12 +9,15 @@ import { MobileNavDialog } from './MobileNavDialog';
  *
  * When the button is pressed, renders a modal dialog as a React portal.
  */
-export const MobileNav = () => {
+export const NavDialog = () => {
   const [dialogOpen, setDialogOpen] = useState<boolean>(false);
   return (
     <>
-      <MobileNavButton onClick={() => setDialogOpen(true)} />
-      <MobileNavDialog open={dialogOpen} onClose={() => setDialogOpen(false)} />
+      <NavDialogButton onClick={() => setDialogOpen(true)} />
+      <NavDialogContent
+        open={dialogOpen}
+        onClose={() => setDialogOpen(false)}
+      />
     </>
   );
 };
