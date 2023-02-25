@@ -9,7 +9,7 @@ export const useAnimations = (): {
 
   const popUp = {
     closed: {
-      scale: reduceMotion ? 1 : 0,
+      scale: reduceMotion ? 1 : 0.8,
       opacity: 0,
     },
     open: {
@@ -20,7 +20,7 @@ export const useAnimations = (): {
       },
     },
     exit: {
-      scale: reduceMotion ? 1 : 0,
+      scale: reduceMotion ? 1 : 0.8,
       opacity: 0,
       transition: {
         duration: 0.15,
