@@ -9,7 +9,7 @@ describe('Landing Section', () => {
     // it should have my name
     screen.getByText(/jon rutter/i);
     // it should have a link to my contact page
-    screen.getByRole('link', { name: /contact/i });
+    screen.getByRole('link', { name: /(contact|get in touch)/i });
     // it should have a link to my portfolio
     screen.getByRole('link', { name: /portfolio/i });
   });
