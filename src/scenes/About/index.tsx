@@ -130,7 +130,7 @@ export const About = () => {
               alt="profile picture of Jon Rutter"
               placeholder="blur"
               quality={100}
-              sizes="400px"
+              width={400}
               className="hover:filter hover:saturate-[1.2] transition-all max-w-[400px] w-full"
               data-testid="profile-picture"
             />
