@@ -36,7 +36,7 @@ export const useAnimations = (): {
   const slideIn = {
     closed: {
       opacity: 0,
-      x: reduceMotion ? 0 : '25%',
+      x: reduceMotion ? 0 : '125%',
     },
     open: {
       opacity: 1,
