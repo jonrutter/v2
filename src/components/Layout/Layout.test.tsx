@@ -3,7 +3,7 @@ import { screen, renderWithProviders as render } from '@/test/utils';
 import { Layout } from '.';
 
 const Component = (
-  <Layout>
+  <Layout route="/">
     <main id="main">
       <h1>Test Heading</h1>
     </main>

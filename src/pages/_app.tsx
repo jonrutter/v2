@@ -31,10 +31,11 @@ export default function App({ Component, pageProps, router }: AppProps) {
       `}</style>
       <LazyMotion features={domMax}>
         <ColorModeProvider>
-            <AnimatePresence mode="wait">
+          <AnimatePresence mode="wait">
+            <Layout route={route}>
               <Component {...pageProps} key={route} />
-            </AnimatePresence>
-          </Layout>
+            </Layout>
+          </AnimatePresence>
         </ColorModeProvider>
       </LazyMotion>
     </>
