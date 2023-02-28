@@ -13,8 +13,8 @@ type Props = {
   route: string;
 };
 
-/** Renders the slide-in navigation dialog. */
-export const NavDialogContent: React.FC<Props> = ({ open, onClose, route }) => {
+/** Renders the slide-in navigation drawer. */
+export const Drawer: React.FC<Props> = ({ open, onClose, route }) => {
   const { container, slideIn, popUp, bgFade } = useAnimations();
 
   return (

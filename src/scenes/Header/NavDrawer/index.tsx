@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { NavDialogButton } from './NavDialogButton';
-import { NavDialogContent } from './NavDialogContent';
+import { OpenButton } from './OpenButton';
+import { Drawer } from './Drawer';
 
 type Props = {
   route: string;
@@ -13,12 +13,12 @@ type Props = {
  *
  * When the button is pressed, renders a modal dialog as a React portal.
  */
-export const NavDialog: React.FC<Props> = ({ route }) => {
+export const NavDrawer: React.FC<Props> = ({ route }) => {
   const [dialogOpen, setDialogOpen] = useState<boolean>(false);
   return (
     <>
-      <NavDialogButton onClick={() => setDialogOpen(true)} />
-      <NavDialogContent
+      <OpenButton onClick={() => setDialogOpen(true)} />
+      <Drawer
         open={dialogOpen}
         route={route}
         onClose={() => setDialogOpen(false)}
