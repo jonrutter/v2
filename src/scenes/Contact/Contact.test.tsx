@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { Contact } from '.';
 import { ENDPOINT } from './ContactForm/api';
 import { server, rest } from '@/test/mock-contact-form/server';
+import { axe } from 'jest-axe';
 
 const labels = [/name/i, /email/i, /subject/i, /message/i];
 const dummyValues = [
@@ -141,5 +142,10 @@ describe('Contact section', () => {
     // an error message should appear
     const error = await screen.findByRole('alert');
     expect(error).toHaveTextContent(/there was an error sending your message/i);
+  });
+  it('should not have any accessibility violations', async () => {
+    const { container } = render(<Contact />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

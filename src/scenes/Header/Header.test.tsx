@@ -8,6 +8,7 @@ import {
 import { Header } from '.';
 import { socialLinks } from '@/data/socialLinks';
 import userEvent from '@testing-library/user-event';
+import { axe } from 'jest-axe';
 
 const Component = <Header route="/" />;
 
@@ -62,5 +63,10 @@ describe('Header', () => {
     waitFor(() => {
       expect(screen.queryByTestId('nav-dialog')).not.toBeInTheDocument();
     });
+  });
+  it('should not have any accessibility violations', async () => {
+    const { container } = render(Component);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

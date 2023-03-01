@@ -1,6 +1,7 @@
 import React from 'react';
 import { renderWithProviders as render, screen } from '@/test/utils';
 import { About } from '.';
+import { axe } from 'jest-axe';
 
 const relevantWords = [
   /front-end/i,
@@ -41,5 +42,10 @@ describe('About Section', () => {
       // the skill should appear
       expect(screen.getAllByText(skillRegex)).not.toHaveLength(0);
     });
+  });
+  it('should not have any accessibility violations', async () => {
+    const { container } = render(<About />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });

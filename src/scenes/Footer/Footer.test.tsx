@@ -1,7 +1,7 @@
 import React from 'react';
 import { renderWithProviders as render, screen } from '@/test/utils';
 import { Footer } from '.';
-
+import { axe } from 'jest-axe';
 import { links } from '@/data/socialLinks';
 
 describe('Footer', () => {
@@ -14,5 +14,10 @@ describe('Footer', () => {
     // it should contain a link to my github
     const link = screen.getByRole('link');
     expect(link).toHaveAttribute('href', links.github);
+  });
+  it('should not have any accessibility violations', async () => {
+    const { container } = render(<Footer />);
+    const results = await axe(container);
+    expect(results).toHaveNoViolations();
   });
 });
