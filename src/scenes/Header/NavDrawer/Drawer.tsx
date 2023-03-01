@@ -10,10 +10,11 @@ import { useAnimations } from './useAnimations';
 type Props = {
   open: boolean;
   onClose: () => void;
+  route: string;
 };
 
-/** Renders the slide-in navigation dialog. */
-export const NavDialogContent: React.FC<Props> = ({ open, onClose }) => {
+/** Renders the slide-in navigation drawer. */
+export const Drawer: React.FC<Props> = ({ open, onClose, route }) => {
   const { container, slideIn, popUp, bgFade } = useAnimations();
 
   return (
@@ -58,12 +59,23 @@ export const NavDialogContent: React.FC<Props> = ({ open, onClose }) => {
                 </button>
               </div>
               {/* page links */}
-              <ul className="flex flex-col space-y-6 px-8 text-lg font-semibold">
+              <ul className="flex flex-col items-start space-y-5 px-8">
                 {navLinks.map(({ label, url }) => (
-                  <m.li variants={slideIn} key={label}>
-                    <Link href={url} onClick={onClose}>
+                  <m.li
+                    variants={slideIn}
+                    key={label}
+                    className="relative inline-block"
+                  >
+                    <Link
+                      href={url}
+                      onClick={onClose}
+                      className="p-1 text-lg font-semibold"
+                    >
                       {label}
                     </Link>
+                    {route === url && (
+                      <div className="h-[2px] absolute -bottom-px left-1 right-1 bg-current" />
+                    )}
                   </m.li>
                 ))}
               </ul>

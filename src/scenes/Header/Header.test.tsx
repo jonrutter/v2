@@ -9,15 +9,17 @@ import { Header } from '.';
 import { socialLinks } from '@/data/socialLinks';
 import userEvent from '@testing-library/user-event';
 
+const Component = <Header route="/" />;
+
 describe('Header', () => {
   it('renders correctly', () => {
-    render(<Header />);
+    render(Component);
   });
   it('renders the social links', () => {
-    render(<Header />);
+    render(Component);
   });
   it('renders all of the links correctly', () => {
-    render(<Header />);
+    render(Component);
     [/home/i, /about/i, /contact/i, /portfolio/i].forEach((linkText) => {
       // there should be a link with the given text
       const link = screen.getByText(linkText);
@@ -26,7 +28,7 @@ describe('Header', () => {
     });
   });
   it('supports toggling light and dark mode', async () => {
-    render(<Header />);
+    render(Component);
     // select the button
     const button = screen.getByLabelText(/dark mode/i);
     // the site should default to a dark theme
@@ -36,7 +38,7 @@ describe('Header', () => {
     expect(button).toHaveAttribute('data-mode', 'light');
   });
   it('supports opening and closing the nav dialog', async () => {
-    render(<Header />);
+    render(Component);
     // the dialog should be initially hidden
     expect(screen.queryByTestId('nav-dialog')).not.toBeInTheDocument();
     // after clicking the button, the dialog should appear

@@ -10,7 +10,6 @@ export const PageTransition: React.FC<{ children: React.ReactNode }> = ({
     <m.main
       initial="hidden"
       animate="enter"
-      exit="exit"
       variants={main}
       transition={{
         type: 'keyframes',

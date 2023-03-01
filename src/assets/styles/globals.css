@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    @apply scroll-smooth motion-reduce:scroll-auto;
+    @apply scroll-smooth motion-reduce:scroll-auto selection:!bg-[#7764D8] selection:!text-white;
   }
 
   html,

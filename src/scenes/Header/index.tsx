@@ -1,15 +1,18 @@
 import React from 'react';
-import Link from 'next/link';
 import { Logo } from '@/components/Logo';
 import { navLinks } from '@/data/navLinks';
 import { ColorModeSwitch } from '@/components/ColorModeSwitch';
-import { NavDialog } from './NavDialog';
+import { NavDrawer } from './NavDrawer';
+import { NavLink } from './NavLink';
 
 // TODO: add blog dropdown once blog functionality is added
-// TODO: add link underline animation that tracks with the current page
+
+type Props = {
+  route: string;
+};
 
 /** Renders the site header */
-export const Header = () => {
+export const Header: React.FC<Props> = ({ route }) => {
   return (
     <>
       <header className="w-full max-w-full flex justify-center items-center px-6 fixed top-0 left-0 right-0 bg-grey-50 dark:bg-grey-800 transition-colors z-40">
@@ -20,19 +23,11 @@ export const Header = () => {
           <div className="flex justify-center items-center">
             <nav className="hidden md:flex justify-between items-center">
               {/* site links */}
-              <ul
-                className="flex justify-center items-center space-x-4 lg:space-x-6 font-serif font-light ml-20 text-lg text-grey-700 dark:text-grey-100"
-                key="site-links"
-              >
+              <ul className="flex justify-center items-center space-x-4 lg:space-x-6 ml-20">
                 {navLinks.map(({ label, url }) => (
-                  <li key={label}>
-                    <Link
-                      href={url}
-                      className="p-1 hover:text-grey-800 focus:text-grey-800 dark:hover:text-white dark:focus:text-white transition-colors"
-                    >
-                      {label}
-                    </Link>
-                  </li>
+                  <NavLink key={url} href={url} selected={route === url}>
+                    {label}
+                  </NavLink>
                 ))}
               </ul>
             </nav>
@@ -40,7 +35,7 @@ export const Header = () => {
               <ColorModeSwitch />
             </div>
             <div className="flex items-center ml-4">
-              <NavDialog />
+              <NavDrawer route={route} />
             </div>
           </div>
         </div>
