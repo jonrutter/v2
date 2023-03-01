@@ -55,6 +55,7 @@ export const ColorModeProvider: React.FC<{ children: React.ReactNode }> = ({
 
   // update `<html>`'s class when state changes
   useEffect(() => {
+    if (initial) return;
     if (document.documentElement) {
       if (mode === 'light') {
         document.documentElement.classList.remove('dark');
@@ -62,7 +63,7 @@ export const ColorModeProvider: React.FC<{ children: React.ReactNode }> = ({
         document.documentElement.classList.add('dark');
       }
     }
-  }, [mode]);
+  }, [initial, mode]);
 
   return (
     <ColorModeContext.Provider value={{ mode, toggleMode }}>
