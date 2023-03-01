@@ -21,7 +21,7 @@ The current iteration of my personal portfolio website.
 
 <br />
 
-<a href="https://jonrutter.io"><img src="./.github/preview.png" alt="Preview of TaskList" width="600px" /></a>
+<a href="https://jonrutter.io" target="_blank"><img src="./.github/preview.png" alt="Preview of TaskList" width="600px" /></a>
 
 ## Built with
 
