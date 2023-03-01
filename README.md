@@ -30,7 +30,6 @@ The current iteration of my personal portfolio website.
 - [Next.js](https://nextjs.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 
-
 ## License
 
 Copyright (c) 2023, Jon Rutter.
