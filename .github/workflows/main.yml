@@ -18,8 +18,8 @@ jobs:
           node-version: 18
       - name: Install dependencies
         run: npm ci && npm i -g @lhci/cli@0.8.x
-      - name: Build and serve site
-        run: npm run build && npm start
+      - name: Build site
+        run: npm run build
       - name: Analyze with lighthouse
         run: lhci autorun
         env:
