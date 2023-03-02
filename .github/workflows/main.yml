@@ -22,6 +22,8 @@ jobs:
         run: npm run build
       - name: Analyze with lighthouse
         run: lhci autorun
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
 
   # lints code
   # Need to lint manually because Next.js build only lints with eslint, not prettier
