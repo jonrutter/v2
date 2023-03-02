@@ -21,7 +21,9 @@ jobs:
       - name: Build site
         run: npm run build
       - name: Analyze with lighthouse
-        run: lhci autorun
+        run: lhci collect
+      - name: Upload results
+        run: lhci upload
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
 
