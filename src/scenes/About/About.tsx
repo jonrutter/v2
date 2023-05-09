@@ -131,7 +131,7 @@ export const About = () => {
               placeholder="blur"
               quality={100}
               width={400}
-              className="hover:filter hover:saturate-[1.2] transition-all max-w-[400px] w-full"
+              className="hover:filter hover:saturate-[1.2] transition-all"
               data-testid="profile-picture"
             />
           </ImageBorders>
