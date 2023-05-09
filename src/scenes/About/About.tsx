@@ -25,7 +25,7 @@ const StyledLink: React.FC<{ href: string; children: React.ReactNode }> = ({
 export const About = () => {
   const { skillContainer, popUp } = useAnimations();
   return (
-    <div className="w-full h-full min-h-[calc(100vh-5rem)] py-20 md:py-28">
+    <div className="w-full h-full min-h-[calc(100vh-5rem)] py-16 md:py-28">
       <div className="w-full max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 lg:justify-between lg:contents-between">
         {/* left / top box - text content */}
         <section className="flex justify-center lg:justify-start">
@@ -45,23 +45,30 @@ export const About = () => {
             <div className="text-lg mb-8">
               <div>
                 <p className="mb-4">
-                  Hi! I'm Jon, and I'm a front-end software engineer focusing on
-                  building performative, accessible, and user-focused websites
+                  Hi! I'm Jon. I'm a front-end software engineer focusing on
+                  building performant, accessible, and user-focused websites
                   with modern technologies like TypeScript and React.
                 </p>
                 <p className="mb-4">
-                  I strongly believe that the web should work for everyone. I
-                  approach every project with a focus on modern best practices
-                  that emphasize accessibility and mobile responsiveness, so
-                  that everyone will be able to use my websites, regardless of
-                  disability or device type.
+                  I strongly believe that the web should work for everyone. With
+                  this in mind, I approach every project with a focus on modern
+                  best practices, including{' '}
+                  <StyledLink href="https://www.w3.org/WAI/fundamentals/accessibility-intro/">
+                    accessibility
+                  </StyledLink>{' '}
+                  and{' '}
+                  <StyledLink href="https://www.smashingmagazine.com/2011/01/guidelines-for-responsive-web-design/">
+                    responsive design
+                  </StyledLink>
+                  , so that I can ship quality software that will work for
+                  everyone.
                 </p>
                 <p className="mb-4">
                   I'm also passionate about{' '}
                   <StyledLink href="https://en.wikipedia.org/wiki/Free_and_open-source_software">
                     free and open-source software
                   </StyledLink>
-                  . I enjoy contributing to open-source projects like{' '}
+                  . I love contributing to open-source projects like{' '}
                   <StyledLink href="https://github.com/gatsbyjs/gatsby/pulls?q=is%3Apr+is%3Amerged+author%3Ajonrutter">
                     <img
                       src="https://avatars.githubusercontent.com/u/12551863?s=50&v=4"
@@ -99,7 +106,7 @@ export const About = () => {
               </h2>
               <div>
                 <p className="mb-4 text-lg">
-                  Some technologies that I frequently work with include:
+                  Some technologies that I regularly use:
                 </p>
               </div>
               <m.ul
