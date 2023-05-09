@@ -92,7 +92,7 @@ export const portfolioItems: PortfolioItemType[] = [
     demoUrl: 'https://jonrutter-manage-landing.netlify.app/',
     codeUrl: 'https://github.com/jonrutter/manage-demo',
     type: 'website',
-    skills: [CSS, JavaScript, React],
+    skills: [NextJS, TypeScript, Tailwind, React],
     img: ManageImage,
     id: 'manage-landing-page',
   },
