@@ -76,29 +76,36 @@ export const PortfolioCard: React.FC<PortfolioItemType> = ({
                   exit="exit"
                 >
                   <div className="relative z-0">
-                    <button aria-label="close details" onClick={closeDetails}>
-                      <XMarkIcon aria-hidden className="w-6 h-6" />
-                    </button>
+                    <div className="mb-3">
+                      <button aria-label="close details" onClick={closeDetails}>
+                        <XMarkIcon aria-hidden className="w-6 h-6" />
+                      </button>
+                    </div>
                     <Dialog.Title
                       as="h3"
-                      className="text-2xl lg:text-4xl font-serif font-semibold mb-4 lg:mb-6 text-center"
+                      className="text-2xl lg:text-3xl font-serif font-semibold mb-4 lg:mb-6 text-center"
                     >
                       <a href={demoUrl} target="_blank" rel="noreferrer">
                         {title}
                       </a>
                     </Dialog.Title>
-                    <p className="lg:text-lg mb-8 text-grey-600 dark:text-grey-300">
+                    <p className="lg:text-lg mb-4 text-grey-600 dark:text-grey-300">
                       {description}
                     </p>
-                    {skills.length > 0 && (
-                      <ul className="flex flex-wrap mb-12 -ml-2 -mt-6">
-                        {skills.map((skill) => (
-                          <li key={skill.url} className="ml-4 mt-6">
-                            <SkillButton {...skill} />
-                          </li>
-                        ))}
-                      </ul>
-                    )}
+                    <div>
+                      <h4 className="lg:text-lg mb-4 text-grey-600 dark:text-grey-300">
+                        Skills used:
+                      </h4>
+                      {skills.length > 0 && (
+                        <ul className="flex flex-wrap mb-12 -ml-2 -mt-6">
+                          {skills.map((skill) => (
+                            <li key={skill.url} className="ml-4 mt-6">
+                              <SkillButton {...skill} />
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
                     <div className="flex justify-end flex-wrap items-center -ml-4 -mt-4">
                       {codeUrl && (
                         <a

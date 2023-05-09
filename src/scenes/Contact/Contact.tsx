@@ -6,7 +6,7 @@ import ContactImage from '@/assets/images/contact.jpg';
 
 export const Contact = () => {
   return (
-    <div className="w-full h-full min-h-[calc(100vh-5rem)] py-20 md:py-28">
+    <div className="w-full h-full min-h-[calc(100vh-5rem)] py-16 md:py-28">
       <div className="w-full max-w-screen-xl mx-auto">
         <section className="max-w-xl mx-auto lg:max-w-full contact-section-grid">
           {/* heading */}
