@@ -6,26 +6,49 @@ import { Button } from '@/components/Button';
 import { links } from '@/data/socialLinks';
 import type { PortfolioItemType } from '@content/portfolio/types';
 
+const StyledLink: React.FC<{ href: string; children: React.ReactNode }> = ({
+  href,
+  children,
+}) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noreferrer"
+    className="hover:text-grey-800 focus:text-grey-800 dark:hover:text-white dark:focus:text-white transition-colors underline inline-flex items-baseline"
+  >
+    {children}
+  </a>
+);
+
 export const Portfolio: React.FC<{ list: PortfolioItemType[] }> = ({
   list,
 }) => {
   const { container, popUp } = useAnimations();
 
   return (
-    <div className="w-full h-full min-h-[calc(100vh-5rem)] py-20 md:py-28">
+    <div className="w-full h-full min-h-[calc(100vh-5rem)] py-16 md:py-28">
       <div className="w-full max-w-screen-xl mx-auto">
         <section className="max-w-xl lg:max-w-full mx-auto">
-          <div className="flex justify-center">
-            <div className="mb-6 w-auto max-w-fit text-center">
+          <div className="flex lg:justify-center">
+            <div className="mb-6 w-auto max-w-fit lg:text-center">
               <h1 className="text-4xl font-semibold font-serif md:text-5xl mb-4 inline-block text-grey-800 dark:text-white transition-colors">
                 My portfolio
               </h1>
               {/* rainbow gradient underline */}
               <div
-                className="h-[2px] bg-gradient-to-r from-neon-400 to-pink-400 w-2/3 mx-auto"
+                className="h-[2px] bg-gradient-to-r from-neon-400 to-pink-400 w-2/3 lg:mx-auto"
                 aria-hidden
               />
             </div>
+          </div>
+          <div>
+            <p className="text-lg max-w-prose mx-auto mb-8">
+              Here are a few of my projects. Feel free to check out my{' '}
+              <StyledLink href={`${links.github}/?tab=repositories`}>
+                GitHub
+              </StyledLink>{' '}
+              page for more examples of my work.
+            </p>
           </div>
           <m.div
             variants={container}
