@@ -36,7 +36,11 @@ export const PortfolioCard: React.FC<PortfolioItemType> = ({
           aria-label={`show details for project ${title}`}
           className="shadow-md hover:opacity-80 transition-opacity"
         >
-          {img === null ? title : <Image alt={title} src={img} />}
+          {img === null ? (
+            title
+          ) : (
+            <Image alt={title} src={img} priority={true} placeholder="blur" />
+          )}
         </button>
       </div>
       <AnimatePresence>
@@ -79,7 +83,9 @@ export const PortfolioCard: React.FC<PortfolioItemType> = ({
                       as="h3"
                       className="text-2xl lg:text-4xl font-serif font-semibold mb-4 lg:mb-6 text-center"
                     >
-                      {title}
+                      <a href={demoUrl} target="_blank" rel="noreferrer">
+                        {title}
+                      </a>
                     </Dialog.Title>
                     <p className="lg:text-lg mb-8 text-grey-600 dark:text-grey-300">
                       {description}
@@ -111,7 +117,7 @@ export const PortfolioCard: React.FC<PortfolioItemType> = ({
                         rel="noreferrer"
                         className="p-2 ml-4 mt-4 flex items-center"
                       >
-                        Live site{' '}
+                        Demo{' '}
                         <ArrowTopRightOnSquareIcon
                           aria-hidden
                           className="w-5 h-5 ml-2"
