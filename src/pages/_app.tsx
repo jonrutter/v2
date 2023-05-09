@@ -1,6 +1,6 @@
 import '@/assets/styles/globals.css';
 import type { AppProps } from 'next/app';
-import { Open_Sans, Playfair_Display, Seaweed_Script } from '@next/font/google';
+import { Open_Sans, Playfair_Display, Seaweed_Script } from 'next/font/google';
 import { ColorModeProvider } from '@/context/ColorMode';
 import { LazyMotion, domMax } from 'framer-motion';
 import { Layout } from '@/components/Layout';

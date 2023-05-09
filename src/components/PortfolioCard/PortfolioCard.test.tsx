@@ -21,7 +21,7 @@ const props: PortfolioItemType = {
 
 const Component = <PortfolioCard {...props} />;
 
-describe('FlipCard', () => {
+describe('PortfolioCard', () => {
   it('renders correctly', () => {
     render(Component);
   });
