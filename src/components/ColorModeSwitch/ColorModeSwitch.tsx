@@ -1,8 +1,8 @@
 import React from 'react';
 import { useColorMode } from '@/context/ColorMode';
-import { SunIcon, MoonIcon } from '@heroicons/react/20/solid';
-
-// TODO: create a custom animated SVG for the icon
+// import { SunIcon, MoonIcon } from '@heroicons/react/20/solid';
+import { SunIcon } from './SunIcon';
+import { MoonIcon } from './MoonIcon';
 
 /** Renders a button that toggles the site's color mode */
 export const ColorModeSwitch = () => {
@@ -16,13 +16,7 @@ export const ColorModeSwitch = () => {
       data-mode={mode}
     >
       {mode ? (
-        <>
-          {mode === 'light' ? (
-            <SunIcon className="h-5 w-5" />
-          ) : (
-            <MoonIcon className="h-5 w-5" />
-          )}
-        </>
+        <>{mode === 'light' ? <SunIcon /> : <MoonIcon />}</>
       ) : (
         <span className="block h-5 w-5"></span>
       )}
