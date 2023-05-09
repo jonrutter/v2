@@ -42,6 +42,17 @@ export const portfolioItems: PortfolioItemType[] = [
     id: 'react-film-database',
   },
   {
+    title: 'Manage Landing Page',
+    description:
+      'A demo landing page for a fictitious software company. Features a fully responsive design with various interactive page components.',
+    demoUrl: 'https://jonrutter-manage-landing.netlify.app/',
+    codeUrl: 'https://github.com/jonrutter/manage-demo',
+    type: 'website',
+    skills: [NextJS, TypeScript, Tailwind, React],
+    img: ManageImage,
+    id: 'manage-landing-page',
+  },
+  {
     title: 'TaskList',
     description:
       'A lightweight, intuitive, open source to-do list app. It supports creating, updating, and deleting tasks, as well as filtering and sorting tasks by label, due date, and priority level.',
@@ -84,17 +95,6 @@ export const portfolioItems: PortfolioItemType[] = [
     skills: [HTML, JavaScript, Sass],
     img: FyloImage,
     id: 'fylo-landing-page',
-  },
-  {
-    title: 'Manage Landing Page',
-    description:
-      'A demo landing page for a fictitious software company. Features a fully responsive design with various interactive page components.',
-    demoUrl: 'https://jonrutter-manage-landing.netlify.app/',
-    codeUrl: 'https://github.com/jonrutter/manage-demo',
-    type: 'website',
-    skills: [NextJS, TypeScript, Tailwind, React],
-    img: ManageImage,
-    id: 'manage-landing-page',
   },
   {
     title: 'React Quiz',
