@@ -11,13 +11,16 @@ export const useAnimations = (): {
   const popUp: Variants = {
     hidden: {
       opacity: 0,
-      ...(reduceMotion ? {} : { scale: 0.8 }),
+      ...(reduceMotion ? {} : { scale: 0.7 }),
     },
     visible: {
       opacity: 1,
       scale: 1,
       transition: {
-        duration: 0.2,
+        type: 'spring',
+        stiffness: 190,
+        damping: 24,
+        mass: 1,
       },
     },
   };

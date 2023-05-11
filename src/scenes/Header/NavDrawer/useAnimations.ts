@@ -2,14 +2,14 @@ import { useReducedMotion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 
 export const useAnimations = (): {
-  container: Variants;
+  drawer: Variants;
   slideIn: Variants;
   popUp: Variants;
   bgFade: Variants;
 } => {
   const reduceMotion = useReducedMotion();
 
-  const container = {
+  const drawer: Variants = {
     closed: {
       ...(reduceMotion ? {} : { x: '100%' }),
       opacity: reduceMotion ? 0 : 1,
@@ -18,17 +18,21 @@ export const useAnimations = (): {
       x: 0,
       opacity: 1,
       transition: {
-        delay: 0.2,
-        duration: 0.3,
-        staggerChildren: reduceMotion ? 0 : 0.1,
+        delay: 0.3,
+        staggerChildren: reduceMotion ? 0 : 0.15,
         delayChildren: 0.4,
+        type: 'spring',
+        stiffness: 170,
+        damping: 26,
       },
     },
     exit: {
       ...(reduceMotion ? { opacity: 0 } : { x: '100%' }),
       transition: {
         delay: 0,
-        duration: 0.3,
+        type: 'spring',
+        stiffness: 250,
+        damping: 26,
       },
     },
   };
@@ -36,13 +40,15 @@ export const useAnimations = (): {
   const slideIn = {
     closed: {
       opacity: 0,
-      x: reduceMotion ? 0 : '125%',
+      x: reduceMotion ? 0 : '150%',
     },
     open: {
       opacity: 1,
       x: 0,
       transition: {
-        duration: 0.2,
+        type: 'spring',
+        stiffness: 170,
+        damping: 26,
       },
     },
   };
@@ -84,7 +90,7 @@ export const useAnimations = (): {
   };
 
   return {
-    container,
+    drawer,
     slideIn,
     popUp,
     bgFade,
