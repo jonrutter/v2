@@ -73,6 +73,16 @@
       opacity: 0.2;
     }
   }
+
+  /* prose styles */
+
+  .prose {
+    @apply text-lg;
+  }
+
+  .prose p {
+    @apply mb-6;
+  }
 }
 
 @layer utilities {
@@ -95,5 +105,12 @@
   }
   .animate-dots circle:nth-child(3) {
     animation-delay: 0.9s;
+  }
+  .dark .neon-text {
+    text-shadow: 0px 0px 10px #db4391;
+  }
+  .dark .box-shadow-custom {
+    box-shadow: 0px 0px 4px var(--shadowColor),
+      inset 0px 0px 4px var(--shadowColor);
   }
 }
