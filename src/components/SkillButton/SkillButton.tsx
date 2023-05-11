@@ -10,7 +10,7 @@ export const SkillButton: React.FC<SkillType> = ({ url, color, label }) => {
       href={url}
       target="_blank"
       rel="noreferrer"
-      className={`py-1 px-2 transition-all text-grey-800 dark:text-white opacity-80 hover:opacity-100 focus:opacity-100 border inline-block box-shadow-custom ${
+      className={`py-1 px-2 transition-all text-grey-800 dark:text-white opacity-80 hover:opacity-100 focus:opacity-100 border inline-block box-shadow-custom rounded-sm ${
         colorIsNeutral ? 'border-black dark:border-white' : ''
       }`}
       style={
