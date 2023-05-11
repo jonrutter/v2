@@ -29,7 +29,7 @@ export const useAnimations = (): {
       scale: 1,
       transition: {
         type: 'spring',
-        stiffness: 200,
+        stiffness: 190,
         damping: 26,
         mass: 1,
       },
