@@ -14,7 +14,7 @@ export const useAnimations = (): {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.25,
+        staggerChildren: 0.2,
         delayChildren: 0.6,
       },
     },
