@@ -34,10 +34,10 @@ export const Input = <T extends React.ElementType = 'input'>({
   const id = `contact-${name}`;
 
   // base classes for the input element
-  const className = `text-base py-3 px-4 bg-transparent border-2 outline-none focus:ring-2 focus:ring-grey-800 dark:focus:ring-white focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-grey-800 w-full peer focus:text-grey-900 dark:focus:text-white ${
+  const className = `text-base py-3 px-4 bg-transparent border-2 outline-none focus:ring-2 focus:ring-grey-800 dark:focus:ring-white focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-grey-800 w-full peer focus:text-grey-900 dark:focus:text-white transition-all ${
     error
-      ? 'border-pink-600 dark:border-pink-400'
-      : 'border-neon-600 dark:border-neon-400'
+      ? 'border-pink-600 dark:border-pink-400 dark:shadow-primary'
+      : 'border-neon-600 dark:border-neon-400 dark:shadow-blue'
   }`;
 
   // create JSX for the relevant input element, based on `as` prop

@@ -60,6 +60,11 @@ module.exports = {
           ...defaultTheme.fontFamily.sans,
         ],
       },
+      boxShadow: {
+        primary: 'inset 0px 0px 5px #DB4391, 0px 0px 5px #DB4391',
+        secondary: 'inset 0px 0px 4px #FFF, 0px 0px 4px #FFF',
+        blue: 'inset 0px 0px 5px #19C6FA, 0px 0px 5px #19C6FA',
+      },
     },
   },
   plugins: [],
