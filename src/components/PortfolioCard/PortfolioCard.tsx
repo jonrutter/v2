@@ -39,7 +39,13 @@ export const PortfolioCard: React.FC<PortfolioItemType> = ({
           {img === null ? (
             title
           ) : (
-            <Image alt={title} src={img} priority={true} placeholder="blur" />
+            <Image
+              alt={title}
+              src={img}
+              priority={true}
+              placeholder="blur"
+              width={400}
+            />
           )}
         </button>
       </div>
