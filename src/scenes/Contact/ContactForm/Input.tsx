@@ -34,11 +34,7 @@ export const Input = <T extends React.ElementType = 'input'>({
   const id = `contact-${name}`;
 
   // base classes for the input element
-  const className = `text-base py-3 px-4 bg-transparent border-2 outline-none focus:ring-2 focus:ring-grey-800 dark:focus:ring-white focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-grey-800 w-full peer focus:text-grey-900 dark:focus:text-white transition-all rounded-sm ${
-    error
-      ? 'border-pink-600 dark:border-pink-400 dark:shadow-primary'
-      : 'border-neon-600 dark:border-neon-400 dark:shadow-blue'
-  }`;
+  const className = `text-base py-3 px-4 bg-transparent outline-none w-full peer focus:text-grey-900 dark:focus:text-white transition-all rounded-sm border-2 border-transparent relative z-10`;
 
   // create JSX for the relevant input element, based on `as` prop
   const inputElement =
@@ -71,10 +67,10 @@ export const Input = <T extends React.ElementType = 'input'>({
       <label
         htmlFor={id}
         className={`text-lg font-semibold absolute left-2 top-3 transition-all motion-reduce:transition-none
-         bg-grey-50 dark:bg-grey-800 px-2 ${
+         bg-grey-50 dark:bg-grey-800 px-2 z-0 rounded-sm ${
            !value
-             ? 'peer-focus:text-grey-800 dark:peer-focus:text-white peer-focus:-translate-x-2 peer-focus:-translate-y-8 peer-focus:scale-90 peer-focus:z-0 -z-10'
-             : 'text-grey-800 dark:text-white -translate-x-2 -translate-y-8 scale-90 z-0'
+             ? 'peer-focus:text-grey-800 dark:peer-focus:text-white peer-focus:-translate-x-1 peer-focus:-translate-y-8 peer-focus:scale-90'
+             : 'text-grey-800 dark:text-white -translate-x-1 -translate-y-8 scale-90'
          }`}
       >
         {label}
@@ -91,6 +87,13 @@ export const Input = <T extends React.ElementType = 'input'>({
             : ''}
         </span>
       )}
+      <div
+        className={`absolute top-0 left-0 right-0 bottom-4 -z-10 peer-focus:ring-2 peer-focus:ring-grey-800 dark:peer-focus:ring-white peer-focus:ring-offset-1 peer-focus:ring-offset-white dark:peer-focus:ring-offset-grey-800 border-2 rounded-sm transition-all ${
+          error
+            ? 'border-pink-600 dark:border-pink-400 dark:shadow-primary'
+            : 'border-neon-600 dark:border-neon-400 dark:shadow-blue'
+        }`}
+      />
     </div>
   );
 };
