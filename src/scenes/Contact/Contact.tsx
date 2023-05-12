@@ -42,7 +42,7 @@ export const Contact = () => {
                 placeholder="blur"
                 quality={100}
                 width={600}
-                className="hover:filter hover:saturate-[1.3] transition-all"
+                className="hover:filter hover:saturate-[1.3] transition-all rounded-sm"
               />
             </ImageBorders>
           </div>

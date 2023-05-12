@@ -9,7 +9,7 @@
 
   html,
   body {
-    @apply dark:bg-grey-900;
+    @apply dark:bg-grey-800;
   }
 
   .contact-section-grid {

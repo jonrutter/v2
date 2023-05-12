@@ -5,6 +5,7 @@ export const useAnimations = (): {
   container: Variants;
   slideDown: Variants;
   popUp: Variants;
+  wrapper: Variants;
 } => {
   const reduceMotion = useReducedMotion();
 
@@ -48,5 +49,17 @@ export const useAnimations = (): {
     },
   };
 
-  return { slideDown, container, popUp };
+  const wrapper: Variants = {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+      transition: {
+        duration: 0.4,
+      },
+    },
+  };
+
+  return { slideDown, container, popUp, wrapper };
 };
