@@ -65,6 +65,9 @@ module.exports = {
         secondary: 'inset 0px 0px 4px #FFF, 0px 0px 4px #FFF',
         blue: 'inset 0px 0px 5px #19C6FA, 0px 0px 5px #19C6FA',
       },
+      dropShadow: {
+        logo: '0px 0px 5px #19C6FA',
+      },
     },
   },
   plugins: [],

@@ -15,7 +15,7 @@ type Props = {
 
 /** Renders the slide-in navigation drawer. */
 export const Drawer: React.FC<Props> = ({ open, onClose, route }) => {
-  const { container, slideIn, popUp, bgFade } = useAnimations();
+  const { drawer, slideIn, popUp, bgFade } = useAnimations();
 
   return (
     <AnimatePresence>
@@ -36,16 +36,12 @@ export const Drawer: React.FC<Props> = ({ open, onClose, route }) => {
             aria-hidden
           />
           <m.nav
-            variants={container}
+            variants={drawer}
             initial="closed"
             animate="open"
             exit="exit"
             className="fixed top-0 right-0 bottom-0 w-4/5 max-w-xs text-grey-800 dark:text-white"
             data-testid="nav-dialog"
-            transition={{
-              type: 'keyframes',
-              ease: 'easeInOut',
-            }}
           >
             <Dialog.Panel className="absolute inset-0 bg-white dark:bg-grey-800 overflow-y-auto overflow-x-hidden">
               {/* close button */}

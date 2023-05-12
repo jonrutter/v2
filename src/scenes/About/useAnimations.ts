@@ -14,8 +14,8 @@ export const useAnimations = (): {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.3,
+        staggerChildren: 0.2,
+        delayChildren: 0.6,
       },
     },
   };
@@ -28,7 +28,10 @@ export const useAnimations = (): {
       opacity: 1,
       scale: 1,
       transition: {
-        duration: 0.2,
+        type: 'spring',
+        stiffness: 190,
+        damping: 26,
+        mass: 1,
       },
     },
   };

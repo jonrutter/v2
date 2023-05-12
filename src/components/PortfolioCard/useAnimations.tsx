@@ -9,22 +9,29 @@ export const useAnimations = (): {
 
   const popUp = {
     closed: {
-      scale: reduceMotion ? 1 : 0.8,
+      // scale: reduceMotion ? 1 : 0.7,
+      y: reduceMotion ? 0 : '1rem',
       opacity: 0,
     },
     open: {
-      scale: 1,
+      // scale: 1,
       opacity: 1,
+      y: 0,
       transition: {
         delay: 0.2,
-        duration: 0.2,
+        type: 'spring',
+        stiffness: 190,
+        damping: 24,
       },
     },
     exit: {
-      scale: reduceMotion ? 1 : 0.8,
+      // scale: reduceMotion ? 1 : 0,
+      y: reduceMotion ? 0 : '1rem',
       opacity: 0,
       transition: {
-        duration: 0.15,
+        type: 'spring',
+        stiffness: 500,
+        damping: 26,
       },
     },
   };
@@ -44,6 +51,7 @@ export const useAnimations = (): {
     exit: {
       opacity: 0,
       transition: {
+        duration: 0.1,
         type: 'keyframes',
         ease: 'easeInOut',
       },

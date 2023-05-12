@@ -107,7 +107,7 @@
     animation-delay: 0.9s;
   }
   .dark .neon-text {
-    text-shadow: 0px 0px 10px #db4391;
+    text-shadow: 0px 0px 1px #db4391, 0px 0px 2px #db4391, 0px 0px 10px #db4391;
   }
   .dark .box-shadow-custom {
     box-shadow: 0px 0px 4px var(--shadowColor),
