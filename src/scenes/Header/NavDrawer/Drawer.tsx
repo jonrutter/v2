@@ -44,55 +44,57 @@ export const Drawer: React.FC<Props> = ({ open, onClose, route }) => {
             data-testid="nav-dialog"
           >
             <Dialog.Panel className="absolute inset-0 bg-white dark:bg-grey-800 overflow-y-auto overflow-x-hidden">
-              {/* close button */}
-              <div className="flex justify-end px-6 pt-5 pb-12">
-                <button
-                  className="p-2"
-                  onClick={onClose}
-                  aria-label="close the menu"
-                >
-                  <XMarkIcon className="h-6 w-6" aria-hidden />
-                </button>
-              </div>
-              {/* page links */}
-              <ul className="flex flex-col items-start space-y-5 px-8">
-                {navLinks.map(({ label, url }) => (
-                  <m.li
-                    variants={slideIn}
-                    key={label}
-                    className="relative inline-block"
+              <div className="relative min-h-full h-auto">
+                {/* close button */}
+                <div className="flex justify-end px-6 pt-5 pb-12">
+                  <button
+                    className="p-2"
+                    onClick={onClose}
+                    aria-label="close the menu"
                   >
-                    <Link
-                      href={url}
-                      onClick={onClose}
-                      className="p-1 text-lg font-semibold"
+                    <XMarkIcon className="h-6 w-6" aria-hidden />
+                  </button>
+                </div>
+                {/* page links */}
+                <ul className="flex flex-col items-start space-y-5 px-8">
+                  {navLinks.map(({ label, url }) => (
+                    <m.li
+                      variants={slideIn}
+                      key={label}
+                      className="relative inline-block"
                     >
-                      {label}
-                    </Link>
-                    {route === url && (
-                      <div className="h-[2px] absolute -bottom-px left-1 right-1 bg-current" />
-                    )}
-                  </m.li>
-                ))}
-              </ul>
-              {/* social links */}
-              <ul className="px-6 py-12 flex flex-wrap -mt-4 -ml-8">
-                {socialLinks.map(({ label, icon, url }) => (
-                  <m.li key={label} className="mt-4 ml-8" variants={popUp}>
-                    <a
-                      href={url}
-                      aria-label={`link to my ${label}`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-block p-2"
-                    >
-                      {icon}
-                    </a>
-                  </m.li>
-                ))}
-              </ul>
-              {/* gradient border */}
-              <div className="absolute top-0 left-0 bottom-0 overflow-auto h-full w-px bg-gradient-to-b from-neon-400 to-pink-400" />
+                      <Link
+                        href={url}
+                        onClick={onClose}
+                        className="p-1 text-lg font-semibold"
+                      >
+                        {label}
+                      </Link>
+                      {route === url && (
+                        <div className="h-[2px] absolute -bottom-px left-1 right-1 bg-current" />
+                      )}
+                    </m.li>
+                  ))}
+                </ul>
+                {/* social links */}
+                <ul className="px-6 py-12 flex flex-wrap -mt-4 -ml-8">
+                  {socialLinks.map(({ label, icon, url }) => (
+                    <m.li key={label} className="mt-4 ml-8" variants={popUp}>
+                      <a
+                        href={url}
+                        aria-label={`link to my ${label}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-block p-2"
+                      >
+                        {icon}
+                      </a>
+                    </m.li>
+                  ))}
+                </ul>
+                {/* gradient border */}
+                <div className="absolute top-0 left-0 bottom-0 overflow-auto h-full w-px bg-gradient-to-b from-neon-400 to-pink-400" />
+              </div>
             </Dialog.Panel>
           </m.nav>
         </Dialog>
