@@ -45,6 +45,7 @@ export const PortfolioCard: React.FC<PortfolioItemType> = ({
               priority={true}
               placeholder="blur"
               width={400}
+              className="rounded-sm"
             />
           )}
         </button>
