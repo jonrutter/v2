@@ -46,7 +46,6 @@ export const ColorModeProvider: React.FC<{ children: React.ReactNode }> = ({
   useEffect(() => {
     if (initial) {
       setInitial(false);
-    } else {
       const d = window.document.documentElement;
       const p = d.dataset.theme;
       setMode(p === 'light' ? 'light' : 'dark');
