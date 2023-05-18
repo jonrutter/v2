@@ -26,7 +26,7 @@ export const About = () => {
   const { skillContainer, popUp } = useAnimations();
   return (
     <div className="w-full h-full min-h-[calc(100vh-5rem)] py-16 md:py-28">
-      <div className="w-full max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 lg:justify-between lg:contents-between">
+      <div className="w-full max-w-screen-lg xl:max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 lg:justify-between lg:contents-between">
         {/* left / top box - text content */}
         <section className="flex justify-center lg:justify-start">
           <div className="w-full max-w-xl">

@@ -27,7 +27,7 @@ export const Portfolio: React.FC<{ list: PortfolioItemType[] }> = ({
 
   return (
     <div className="w-full h-full min-h-[calc(100vh-5rem)] py-16 md:py-28">
-      <div className="w-full max-w-screen-xl mx-auto">
+      <div className="w-full max-w-screen-lg xl:max-w-screen-xl mx-auto">
         <section className="max-w-xl lg:max-w-full mx-auto">
           <div className="flex lg:justify-center">
             <div className="mb-6 w-auto max-w-fit lg:text-center">
