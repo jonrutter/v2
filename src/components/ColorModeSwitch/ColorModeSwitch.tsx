@@ -7,6 +7,7 @@ import { MoonIcon } from './MoonIcon';
 /** Renders a button that toggles the site's color mode */
 export const ColorModeSwitch = () => {
   const { mode, toggleMode } = useColorMode();
+  console.log(mode);
 
   return (
     <button
