@@ -8,10 +8,10 @@ export default function NotFoundPage() {
   return (
     <PageTransition>
       <Seo title="Not Found" />
-      <div className="w-full min-h-content py-20 md:py-36">
+      <div className="w-full min-h-content py-16 md:py-36">
         <div className="w-full max-w-[500px] mx-auto">
           <h1 className="flex flex-col mb-6 md:mb-8">
-            <span className="text-xl md:text-2xl font-cursive text-pink-600 dark:text-pink-400 mb-1 md:mb-2 transition-colors">
+            <span className="text-xl md:text-2xl font-neon text-pink-600 dark:text-white mb-2 md:mb-4 transition-all">
               Oops.{' '}
             </span>
             <span className="text-4xl md:text-6xl font-semibold font-serif text-grey-800 dark:text-white transition-colors">
