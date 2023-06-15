@@ -11,7 +11,7 @@ export const NavLink: React.FC<Props> = ({ selected, href, children }) => (
   <li className="relative">
     <Link
       href={href}
-      className="p-1 hover:text-grey-800 focus:text-grey-800 dark:hover:text-white dark:focus:text-white transition-colors font-serif font-semibold text-lg text-grey-700 dark:text-grey-100 lowercase"
+      className="p-1 hover:text-grey-800 focus:text-grey-800 dark:hover:text-white dark:focus:text-white transition-colors font-serif font-semibold text-lg text-grey-700 dark:text-grey-100 lowercase tracking-wide"
     >
       {children}
     </Link>

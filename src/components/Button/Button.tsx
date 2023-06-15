@@ -15,7 +15,7 @@ export const Button = <T extends React.ElementType = 'button'>({
   return (
     <Tag
       {...rest}
-      className={`text-lg font-serif font-bold leading-none py-4 px-10 border-2 bg-transparent transition-all text-center text-grey-800 dark:text-white inline-block rounded-sm ${
+      className={`text-lg font-serif font-bold tracking-wide leading-none py-4 px-10 border-2 bg-transparent transition-all text-center text-grey-800 dark:text-white inline-block rounded-sm ${
         variant === 'primary'
           ? 'border-pink-500 dark:border-pink-400 hover:bg-pink-400/30 dark:shadow-primary'
           : 'border-grey-800 dark:border-white  hover:bg-grey-800/10 dark:hover:bg-white/20 dark:shadow-secondary'
