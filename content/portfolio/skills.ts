@@ -107,3 +107,21 @@ export const WordPress: SkillType = {
   color: '#21759B',
   url: 'https://wordpress.com/',
 };
+
+export const NodeJS: SkillType = {
+  label: 'Node.js',
+  color: '#339933',
+  url: 'https://nodejs.org/en',
+};
+
+export const Express: SkillType = {
+  label: 'Express',
+  color: '#000000',
+  url: 'https://expressjs.com/',
+};
+
+export const MongoDB: SkillType = {
+  label: 'MongoDB',
+  color: '#47A248',
+  url: 'https://www.mongodb.com/',
+};

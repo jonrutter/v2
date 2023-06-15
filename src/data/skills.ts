@@ -10,6 +10,9 @@ import {
   MaterialUI,
   HTML,
   CSS,
+  NodeJS,
+  Express,
+  MongoDB,
 } from '@content/portfolio/skills';
 
 export const skills: SkillType[] = [
@@ -23,4 +26,7 @@ export const skills: SkillType[] = [
   MaterialUI,
   HTML,
   CSS,
+  NodeJS,
+  Express,
+  MongoDB,
 ];
